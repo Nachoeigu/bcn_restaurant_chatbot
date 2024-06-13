@@ -1,0 +1,619 @@
+[
+    {
+        "question": "What are your opening hours?",
+        "answer": "Our restaurant is open from 10:00 AM to 10:00 PM every day from Monday to Sunday. We welcome guests for breakfast, lunch, and dinner, and our kitchen is ready to serve you with a variety of delicious meals during these hours."
+    },
+    {
+        "question": "Do you have vegan options?",
+        "answer": "Yes, we offer a wide range of vegan dishes. Our menu includes vegan appetizers, main courses, and desserts, all clearly marked. Additionally, our chefs are happy to accommodate any specific dietary requests to ensure you have a delightful dining experience."
+    },
+    {
+        "question": "Where are you located?",
+        "answer": "We are located at 123 Barcelona Street, Barcelona, Spain. Our restaurant is situated in the heart of the city, easily accessible by public transport and close to several popular tourist attractions."
+    },
+    {
+        "question": "Do you offer delivery services?",
+        "answer": "Yes, we offer delivery services within a 5 km radius of our location. You can place your order through our website or our app, available on both iOS and Android platforms. We also partner with popular delivery apps to ensure you can enjoy our meals from the comfort of your home."
+    },
+    {
+        "question": "Can I make a reservation online?",
+        "answer": "Absolutely! You can make a reservation through our website by visiting the 'Reservations' section, or through our app. Alternatively, you can call us directly at (555) 123-4567 to book your table. We recommend making reservations, especially on weekends and holidays, to ensure availability."
+    },
+    {
+        "question": "Do you have parking available?",
+        "answer": "Yes, we have a small parking lot available for customers on a first-come, first-served basis. Additionally, there are several public parking facilities nearby. We encourage guests to use public transport or taxis during peak hours to avoid parking difficulties."
+    },
+    {
+        "question": "Are pets allowed?",
+        "answer": "We welcome pets in our outdoor seating area. Please ensure that your pets are well-behaved and on a leash at all times. If you plan to bring your pet, let us know in advance so we can reserve a suitable table for you."
+    },
+    {
+        "question": "Do you have gluten-free options?",
+        "answer": "Yes, we offer several gluten-free dishes. These options are clearly marked on our menu, and our staff is trained to handle gluten-free orders to prevent cross-contamination. Please inform us of any specific dietary needs when placing your order."
+    },
+    {
+        "question": "What is your cancellation policy for reservations?",
+        "answer": "We request that you cancel at least 24 hours in advance to avoid a cancellation fee. This allows us to manage our reservations effectively and offer the table to other guests. For group reservations, a longer notice period might be required."
+    },
+    {
+        "question": "Do you have a kids' menu?",
+        "answer": "Yes, we have a special menu for children that includes a variety of kid-friendly dishes such as mini burgers, pasta, and chicken tenders. We also offer healthy options and smaller portion sizes to cater to our younger guests."
+    },
+    {
+        "question": "Do you accept credit cards?",
+        "answer": "Yes, we accept all major credit cards, including Visa, MasterCard, American Express, and Discover. We also accept contactless payments and mobile wallets for your convenience."
+    },
+    {
+        "question": "Can you accommodate large groups?",
+        "answer": "Yes, we can accommodate large groups. Please contact us in advance to make the necessary arrangements. We offer special group menus and can arrange seating to ensure your group has a pleasant dining experience."
+    },
+    {
+        "question": "How do I download your app?",
+        "answer": "Our app is available on both the App Store and Google Play. Simply search for 'Our Restaurant App', download it, and follow the on-screen instructions to set up your account. The app allows you to make reservations, order food for delivery, and access exclusive promotions."
+    },
+    {
+        "question": "How can I make a reimbursement request?",
+        "answer": "To request a reimbursement, please contact our customer service team through the app or by calling us at (555) 123-4567. Provide your order details and the reason for the reimbursement. Our team will review your request and process it within 5-7 business days."
+    },
+    {
+        "question": "How can I apply for a job at your restaurant?",
+        "answer": "We are always looking for talented individuals to join our team. To apply, visit the 'Careers' section on our website or app, where you can find current job openings and submit your application online. You can also email your resume and cover letter to hr@ourrestaurant.com."
+    },
+    {
+        "question": "Do you offer gift cards?",
+        "answer": "Yes, we offer gift cards in various denominations. You can purchase them at our restaurant, through our website, or via our app. Gift cards are a perfect gift for friends and family, and they can be used for dining in, takeout, or delivery orders."
+    },
+    {
+        "question": "What measures are you taking for COVID-19 safety?",
+        "answer": "We prioritize the health and safety of our guests and staff. We follow all local health guidelines, including regular sanitization, social distancing, and contactless payment options. Masks and hand sanitizers are available, and our staff undergoes daily health checks."
+    },
+    {
+        "question": "Do you offer catering services?",
+        "answer": "Yes, we offer catering services for events of all sizes. Our catering menu includes a wide range of options to suit any occasion. Contact our catering team through our website or call (555) 123-4567 to discuss your requirements and get a quote."
+    },
+    {
+        "question": "Can I host a private event at your restaurant?",
+        "answer": "Yes, we offer private event hosting services. Whether it's a birthday party, corporate event, or wedding reception, we can provide a customized experience to suit your needs. Contact our events coordinator through our website or by calling (555) 123-4567."
+    },
+    {
+        "question": "Do you offer seasonal menus?",
+        "answer": "Yes, we update our menu seasonally to take advantage of the freshest ingredients. Our seasonal menus feature special dishes that highlight the flavors of the season. Follow us on social media or check our website for the latest updates."
+    },
+    {
+        "question": "What are your customer service hours?",
+        "answer": "Our customer service team is available from 9:00 AM to 9:00 PM, Monday to Friday. You can reach them through our app, website, or by calling (555) 123-4567. For urgent matters outside of these hours, please leave a message, and we will get back to you as soon as possible."
+    },
+    {
+        "question": "Do you offer a loyalty program?",
+        "answer": "Yes, we have a loyalty program that rewards you for dining with us. Sign up through our app to start earning points on every purchase. Points can be redeemed for discounts, free items, and exclusive offers. Check the app for your current points balance and available rewards."
+    },
+    {
+        "question": "How can I provide feedback about my experience?",
+        "answer": "We value your feedback and use it to improve our services. You can provide feedback through our app, website, or by emailing us at feedback@ourrestaurant.com. Additionally, we may send you a survey after your visit to gather your thoughts."
+    },
+    {
+        "question": "What are your payment options?",
+        "answer": "We accept cash, all major credit cards, debit cards, and contactless payments such as Apple Pay and Google Pay. For online orders, you can also pay through our app or website using a secure payment gateway."
+    },
+    {
+        "question": "Can I customize my order?",
+        "answer": "Yes, we are happy to accommodate special requests to customize your order. Please inform our staff of any specific preferences or dietary restrictions when placing your order, and we will do our best to meet your needs."
+    },
+    {
+        "question": "Do you offer Wi-Fi for customers?",
+        "answer": "Yes, we offer free Wi-Fi for our customers. Ask any of our staff for the Wi-Fi password when you visit, and stay connected while you enjoy your meal."
+    },
+    {
+        "question": "How do I make a reservation for a special occasion?",
+        "answer": "For special occasions, we recommend calling us directly at (555) 123-4567 to make a reservation. This allows us to discuss any special arrangements or requests you might have to make your event memorable."
+    },
+    {
+        "question": "Do you have any special discounts or promotions?",
+        "answer": "Yes, we offer various discounts and promotions throughout the year. You can find information about our current offers on our website, app, and social media pages. Join our mailing list to receive exclusive deals and updates directly to your inbox."
+    },
+    {
+        "question": "Is your restaurant wheelchair accessible?",
+        "answer": "Yes, our restaurant is fully wheelchair accessible. We have ramps and accessible seating areas to ensure all our guests can enjoy their visit comfortably."
+    },
+    {
+        "question": "Can I buy your merchandise?",
+        "answer": "Yes, we sell a range of merchandise, including T-shirts, mugs, and tote bags. You can purchase these items at our restaurant or through our online store on our website and app."
+    },
+    {
+        "question": "Do you offer cooking classes?",
+        "answer": "Yes, we occasionally offer cooking classes hosted by our chefs. These classes are a great way to learn new recipes and cooking techniques. Check our website and social media for announcements about upcoming classes and how to register."
+    },
+    {
+        "question": "How can I contact customer support?",
+        "answer": "You can contact our customer support team through our app, website, or by calling (555) 123-4567. For email inquiries, please reach out to support@ourrestaurant.com. We aim to respond to all inquiries within 24 hours."
+    },
+    {
+        "question": "Do you have a newsletter?",
+        "answer": "Yes, we have a monthly newsletter that provides updates on our menu, special events, and exclusive promotions. You can subscribe through our website or app to stay informed about the latest news from our restaurant."
+    },
+    {
+        "question": "Do you offer alcohol?",
+        "answer": "Yes, we have a fully stocked bar with a wide selection of wines, beers, and spirits. Our drink menu includes signature cocktails, craft beers, and fine wines to complement your meal. Our bartenders are happy to recommend pairings."
+    },
+    {
+        "question": "Can I order online for pick-up?",
+        "answer": "Yes, you can order online for pick-up through our website or app. Select the ‘Pick-Up’ option when placing your order, and you will receive a notification when your order is ready for collection."
+    },
+    {
+        "question": "Do you offer a brunch menu?",
+        "answer": "Yes, we offer a special brunch menu on weekends from 10:00 AM to 2:00 PM. Our brunch menu features a variety of breakfast and lunch options, including eggs Benedict, pancakes, and fresh salads."
+    },
+    {
+        "question": "How do I update my profile on your app?",
+        "answer": "To update your profile, log in to our app and go to the ‘Profile’ section. From there, you can update your personal information, preferences, and payment methods. Make sure to save any changes before exiting."
+    },
+    {
+        "question": "Do you have live music or entertainment?",
+        "answer": "Yes, we host live music and entertainment on select evenings. Check our website and social media pages for the schedule of upcoming performances. Enjoy a meal while listening to local bands and artists."
+    },
+    {
+        "question": "How do I report an issue with my order?",
+        "answer": "If you encounter an issue with your order, please contact our customer service team through our app, website, or by calling (555) 123-4567. Provide your order details and the nature of the issue, and we will work to resolve it promptly."
+    },
+    {
+        "question": "What is your policy on allergens?",
+        "answer": "We take allergens very seriously and strive to provide detailed information about the ingredients in our dishes. Please inform our staff of any allergies, and we will ensure your meal is prepared safely. We have designated allergen-free areas in our kitchen to prevent cross-contamination."
+    },
+    {
+        "question": "Can I book a table for outdoor seating?",
+        "answer": "Yes, you can request outdoor seating when making a reservation through our website, app, or by calling us directly. Our outdoor seating area is popular, so we recommend booking in advance to secure a spot."
+    },
+    {
+        "question": "Do you offer a takeout menu?",
+        "answer": "Yes, we offer a comprehensive takeout menu that includes many of our popular dishes. You can place a takeout order through our website, app, or by calling us. Our staff will prepare your order for quick and easy pick-up."
+    },
+    {
+        "question": "How can I leave a review for your restaurant?",
+        "answer": "We appreciate your feedback and encourage you to leave a review on popular platforms like Google, Yelp, and TripAdvisor. You can also leave a review directly through our app or website. Your feedback helps us improve and serve you better."
+    },
+    {
+        "question": "Do you offer special dietary menus?",
+        "answer": "Yes, we offer special menus for various dietary needs, including vegan, gluten-free, and low-carb options. Our staff is trained to assist with dietary requirements and can recommend suitable dishes from our menu."
+    },
+    {
+        "question": "What are your house specialties?",
+        "answer": "Our house specialties include a variety of unique and flavorful dishes created by our chef. Some of our most popular specialties are the seafood paella, grilled octopus, and our signature Catalan cream dessert. These dishes showcase the best of local ingredients and culinary traditions."
+    },
+    {
+        "question": "How do I unsubscribe from your newsletter?",
+        "answer": "To unsubscribe from our newsletter, click the ‘Unsubscribe’ link at the bottom of any of our email newsletters. Alternatively, you can manage your subscription preferences through your profile on our website or app."
+    },
+    {
+        "question": "Do you offer special menus for holidays?",
+        "answer": "Yes, we create special menus for holidays and festive occasions, such as Christmas, New Year’s Eve, and Valentine’s Day. These menus feature seasonal dishes and exclusive offerings to celebrate the occasion. Check our website and social media for announcements and details."
+    },
+    {
+        "question": "Can I buy your sauces and dressings?",
+        "answer": "Yes, we offer some of our popular sauces and dressings for purchase. You can buy them at our restaurant or through our online store. These items make great gifts and allow you to enjoy our flavors at home."
+    },
+    {
+        "question": "What is your policy on tips and gratuity?",
+        "answer": "Tips and gratuity are not included in the bill but are appreciated. For groups of six or more, a 15% gratuity will be added to the bill. Our staff strives to provide excellent service, and your generosity is always valued."
+    },
+    {
+        "question": "How can I join your mailing list?",
+        "answer": "You can join our mailing list by signing up on our website or through our app. Enter your email address in the subscription form, and you will receive updates on our latest news, events, and exclusive offers."
+    },
+    {
+        "question": "Do you offer event planning services?",
+        "answer": "Yes, we offer event planning services for various occasions, including birthdays, anniversaries, and corporate events. Our event coordinator will work with you to plan a memorable event tailored to your needs. Contact us through our website or by calling (555) 123-4567 for more information."
+    },
+    {
+        "question": "How do I apply a discount code to my online order?",
+        "answer": "To apply a discount code, enter the code in the designated field during the checkout process on our website or app. The discount will be applied to your order total. If you encounter any issues, please contact our customer service team for assistance."
+    },
+    {
+        "question": "Do you offer gift wrapping for merchandise?",
+        "answer": "Yes, we offer gift wrapping services for merchandise purchased at our restaurant or online store. Please select the gift wrapping option during checkout, and our team will beautifully wrap your items."
+    },
+    {
+        "question": "What is your policy on lost and found items?",
+        "answer": "If you lose an item at our restaurant, please contact us as soon as possible. We keep lost and found items for 30 days. You can inquire about lost items by calling us at (555) 123-4567 or visiting the restaurant."
+    },
+    {
+        "question": "How do I update my payment information on the app?",
+        "answer": "To update your payment information, log in to our app and go to the ‘Payment’ section under your profile. Here, you can add, remove, or update your payment methods. Make sure to save any changes before exiting."
+    },
+    {
+        "question": "Can I request a specific table when making a reservation?",
+        "answer": "Yes, you can request a specific table or seating area when making a reservation. While we cannot guarantee all requests, we will do our best to accommodate your preferences. Please mention your request when booking online or over the phone."
+    },
+    {
+        "question": "Do you offer any health and wellness options on your menu?",
+        "answer": "Yes, our menu includes a variety of health and wellness options, such as salads, smoothie bowls, and dishes with lean proteins and whole grains. These options are designed to provide nutritious and delicious meals for health-conscious diners."
+    },
+    {
+        "question": "How do I follow you on social media?",
+        "answer": "You can follow us on social media by searching for our restaurant’s name on platforms like Facebook, Instagram, and Twitter. We regularly post updates, promotions, and behind-the-scenes content. Links to our social media profiles are also available on our website and app."
+    },
+    {
+        "question": "What is your policy on BYOB (Bring Your Own Bottle)?",
+        "answer": "We do not have a BYOB policy as we offer a wide selection of wines, beers, and spirits. However, if you have a special request for a particular beverage, please contact us in advance, and we may be able to accommodate it."
+    },
+    {
+        "question": "Do youoffer breakfast items all day?",
+        "answer": "We serve breakfast items during our breakfast hours, which are from 10:00 AM to 12:00 PM. While some breakfast items may be available throughout the day, our full breakfast menu is only offered during these specific hours."
+    },
+    {
+        "question": "Can I purchase a subscription for regular meal deliveries?",
+        "answer": "Yes, we offer subscription plans for regular meal deliveries. These plans can be customized to suit your preferences and dietary needs. Contact our customer service team through our website or app for more details and to sign up."
+    },
+    {
+        "question": "How do I report a problem with the app?",
+        "answer": "If you encounter any issues with our app, please report them through the ‘Support’ section within the app or by emailing support@ourrestaurant.com. Provide a detailed description of the problem, and our technical team will work to resolve it promptly."
+    },
+    {
+        "question": "What is your dress code?",
+        "answer": "Our dress code is smart casual. We want our guests to feel comfortable while enjoying their meal. We appreciate your understanding in adhering to this dress code to ensure a pleasant dining experience for all."
+    },
+    {
+        "question": "How can I stay updated on new menu items?",
+        "answer": "To stay updated on new menu items, follow us on social media, subscribe to our newsletter, and check our website regularly. We announce new dishes, seasonal specials, and limited-time offers through these channels."
+    },
+    {
+        "question": "What is your policy on bringing outside food and drinks?",
+        "answer": "We kindly ask that guests do not bring outside food or drinks into the restaurant, with the exception of special dietary needs or allergies that cannot be accommodated by our menu. Please inform our staff in advance if this is the case."
+    },
+    {
+        "question": "How can I redeem a promotional code?",
+        "answer": "To redeem a promotional code, enter the code during the checkout process on our website or app. The discount will be applied to your order total. If you encounter any issues, please contact our customer service team for assistance."
+    },
+    {
+        "question": "Do you offer contactless dining options?",
+        "answer": "Yes, we offer contactless dining options, including digital menus, contactless payment, and minimal interaction with staff to ensure your safety. You can also place orders and make payments through our app."
+    },
+    {
+        "question": "How can I schedule a consultation for a large event?",
+        "answer": "To schedule a consultation for a large event, please contact our events coordinator through our website or by calling (555) 123-4567. We will arrange a meeting to discuss your requirements and tailor our services to suit your event."
+    },
+    {
+        "question": "Do you offer special dietary meal plans?",
+        "answer": "Yes, we offer customized meal plans for various dietary needs, including vegan, gluten-free, and low-carb options. Contact our customer service team to discuss your requirements and set up a meal plan that fits your lifestyle."
+    },
+    {
+        "question": "What is your policy on service animals?",
+        "answer": "Service animals are welcome in our restaurant. Please ensure that your service animal is well-behaved and under control at all times. If you have any special requirements, let us know in advance, and we will do our best to accommodate you."
+    },
+    {
+        "question": "How do I make changes to an existing reservation?",
+        "answer": "To make changes to an existing reservation, please contact us directly at (555) 123-4567 or through the ‘Reservations’ section on our website or app. Provide your reservation details and the changes you’d like to make, and our team will assist you."
+    },
+    {
+        "question": "Do you offer any seasonal or holiday-themed drinks?",
+        "answer": "Yes, we offer seasonal and holiday-themed drinks that change throughout the year. These special beverages are crafted to celebrate the flavors and spirit of each season. Check our menu or ask your server for the current offerings."
+    },
+    {
+        "question": "Can I book a private dining room?",
+        "answer": "Yes, we have private dining rooms available for booking. These rooms are perfect for intimate gatherings, business meetings, or special celebrations. Contact us through our website or by calling (555) 123-4567 to inquire about availability and pricing."
+    },
+    {
+        "question": "How can I track my delivery order?",
+        "answer": "You can track your delivery order through our app or website. Once your order is placed, you will receive a tracking link that provides real-time updates on the status of your delivery. For any issues, please contact our customer service team."
+    },
+    {
+        "question": "Do you offer alcoholic beverages for delivery?",
+        "answer": "Yes, we offer a selection of alcoholic beverages for delivery, including wines, beers, and cocktails. Please note that you must be of legal drinking age, and ID verification may be required upon delivery."
+    },
+    {
+        "question": "What is your policy on group bookings?",
+        "answer": "For group bookings, we recommend contacting us in advance to ensure availability and to discuss any special arrangements. We offer customized menus and seating arrangements for groups to ensure a seamless dining experience."
+    },
+    {
+        "question": "How can I find out about job openings?",
+        "answer": "To find out about job openings, visit the ‘Careers’ section on our website or app. Here, you can view current vacancies and submit your application online. You can also follow us on social media for announcements about job opportunities."
+    },
+    {
+        "question": "Do you offer student discounts?",
+        "answer": "Yes, we offer student discounts with a valid student ID. Check our website or app for current discount details and terms. Present your student ID when paying to receive the discount."
+    },
+    {
+        "question": "How can I participate in your loyalty program?",
+        "answer": "To participate in our loyalty program, sign up through our app or website. Once registered, you will start earning points on every purchase. Points can be redeemed for discounts, free items, and exclusive offers. Check the app for your current points balance and available rewards."
+    },
+    {
+        "question": "Do you have any partnerships with local businesses?",
+        "answer": "Yes, we partner with several local businesses to offer exclusive deals and promotions. Check our website and social media for information on current partnerships and how you can benefit from them."
+    },
+    {
+        "question": "How do I delete my account?",
+        "answer": "To delete your account, please contact our customer service team through the app or by emailing support@ourrestaurant.com. Provide your account details and reason for deletion. Our team will process your request and confirm once your account has been deleted."
+    },
+    {
+        "question": "Can I place a special order for a specific event?",
+        "answer": "Yes, we accommodate special orders for specific events, such as birthdays, anniversaries, and corporate functions. Contact our catering team through our website or by calling (555) 123-4567 to discuss your requirements and place your order."
+    },
+    {
+        "question": "Do you have a dress code for private events?",
+        "answer": "The dress code for private events may vary depending on the nature of the event. Generally, we recommend smart casual attire. If you have specific requirements for your event, please discuss them with our events coordinator."
+    },
+    {
+        "question": "How do I check the balance on my gift card?",
+        "answer": "You can check the balance on your gift card through our website or app by entering the gift card number in the ‘Check Balance’ section. Alternatively, you can ask our staff to check the balance for you at the restaurant."
+    },
+    {
+        "question": "Can I donate to a charity through your restaurant?",
+        "answer": "Yes, we support various charitable initiatives and often collaborate with local charities. You can make a donation through our website or app during checkout. We also host fundraising events and campaigns throughout the year."
+    },
+    {
+        "question": "Do you offer multi-lingual menus?",
+        "answer": "Yes, we offer menus in multiple languages, including English, Spanish, and Catalan. Our staff is also multilingual and can assist you in your preferred language to ensure a pleasant dining experience."
+    },
+    {
+        "question": "How do I sign up for a cooking class?",
+        "answer": "To sign up for a cooking class, visit our website or app and navigate to the ‘Cooking Classes’ section. Here, you can view upcoming classes, select the one you’re interested in, and complete the registration process."
+    },
+    {
+        "question": "Do you offer nutritional information for your dishes?",
+        "answer": "Yes, we provide nutritional information for our dishes upon request. This information includes calorie counts, macronutrient breakdowns, and allergen details. Please ask our staff for assistance when placing your order."
+    },
+    {
+        "question": "Can I book a table with a view?",
+        "answer": "Yes, you can request a table with a view when making your reservation. While we cannot guarantee all requests, we will do our best to accommodate your preference. Please mention your request when booking online or over the phone."
+    },
+    {
+        "question": "Do you have any signature cocktails?",
+        "answer": "Yes, we offer a variety of signature cocktails crafted by our expert bartenders. These unique drinks are made with premium ingredients and are perfect for any occasion. Ask your server for recommendations or check our drink menu for details."
+    },
+    {
+        "question": "How do I update my contact information on the app?",
+        "answer": "To update your contact information, log in to our app and go to the ‘Profile’ section. From there, you can update your phone number, email address, and other contact details. Make sure to save any changes before exiting."
+    },
+    {
+        "question": "What is your policy on dietary restrictions?",
+        "answer": "We take dietary restrictions seriously and strive to accommodate all guests. Please inform our staff of any dietary restrictions or allergies when placing your order, and we will ensure your meal is prepared safely. We offer a variety of options to cater to different dietary needs."
+    },
+    {
+        "question": "Do you offer any family-friendly activities?",
+        "answer": "Yes, we offer various family-friendly activities, including kids’ coloring sheets, board games, and occasional family events. Follow us on social media or check our website for announcements about upcoming family-friendly activities and events."
+    },
+    {
+        "question": "How can I receive a copy of my receipt?",
+        "answer": "You can request a copy of your receipt at the time of payment. If you need a copy after your visit, please contact our customer service team through our website or app, and provide your order details. We will email you a copy of your receipt."
+    },
+    {
+        "question": "Do you have a policy on customer complaints?",
+        "answer": "We take customer complaints seriously and strive to resolve any issues promptly. If you have a complaint, please contact our customer service team through our website, app, or by calling (555) 123-4567. Provide details of your complaint, and we will work to address it as quickly as possible."
+    },
+    {
+        "question": "How can I get involved with your community events?",
+        "answer": "We regularly host community events and welcome participation from our guests. Check our website, app, and social media for information about upcoming events and how you can get involved. You can also contact our events coordinator for more details."
+    },
+    {
+        "question": "Do you offer any rewards for referrals?",
+        "answer": "Yes, we have a referral program that rewards you for referring new customers to our restaurant. When your referral makes their first purchase, you both receive a reward. Details of the program and how to participate are available on our website and app."
+    },
+    {
+        "question": "What is your policy on late arrivals for reservations?",
+        "answer": "If you are running late for your reservation, please contact us as soon as possible. We will hold your table for up to 15 minutes past the reservation time. After that, we may need to release the table to other guests. We appreciate your understanding."
+    },
+    {
+        "question": "Do you offer any educational programs for children?",
+        "answer": "Yes, we occasionally offer educational programs for children, such as cooking classes and nutrition workshops. These programs are designed to be fun and informative, helping kids learn about healthy eating and cooking. Check our website and social media for upcoming programs."
+    },
+    {
+        "question": "Can I request a song during live music performances?",
+        "answer": "Yes, you can request a song during live music performances. Our performers are usually happy to accommodate song requests, depending on their repertoire. Please ask your server or speak to the performer directly."
+    },
+    {
+        "question": "What is your policy on noise levels?",
+        "answer": "We strive to maintain a comfortable atmosphere for all guests. While we welcome lively conversation and enjoyment, we ask that guests be mindful of noise levels, especially during busy times. If you find the noise level uncomfortable, please inform our staff, and we will do our best to address the situation."
+    },
+    {
+        "question": "Do you have a policy for split checks?",
+        "answer": "Yes, we can accommodate split checks. Please inform your server at the beginning of your meal if you would like separate checks, and they will arrange it for you. This helps ensure a smooth and efficient billing process."
+    },
+    {
+        "question": "How can I provide suggestions for menu items?",
+        "answer": "We welcome suggestions for menu items and appreciate your feedback. You can provide suggestions through our app, website, or by emailing feedback@ourrestaurant.com. Our culinary team reviews all suggestions and may incorporate them into future menus."
+    },
+    {
+        "question": "Do you offer any discounts for senior citizens?",
+        "answer": "Yes, we offer discounts for senior citizens with valid ID. Check our website or app for current discount details and terms. Present your ID when paying to receive the discount."
+    },
+    {
+        "question": "How do I report a bug or issue with the app?",
+        "answer": "If you encounter a bug or issue with our app, please report it through the ‘Support’ section within the app or by emailing support@ourrestaurant.com. Provide a detailed description of the problem, and our technical team will work to resolve it promptly."
+    },
+    {
+        "question": "What is your policy on cancellations for large parties?",
+        "answer": "For large parties, we request that you cancel at least 48 hours in advance to avoid a cancellation fee. This allows us to manage our reservations effectively and offer the space to other guests. Please contact us directly to cancel or modify your reservation."
+    },
+    {
+        "question": "Can I request a private tour of the restaurant?",
+        "answer": "Yes, we offer private tours of our restaurant upon request. Tours include a behind-the-scenes look at our kitchen, dining areas, and event spaces. Contact us through our website or by calling (555) 123-4567 to schedule a tour."
+    },
+    {
+        "question": "Do you offer any classes or workshops for adults?",
+        "answer": "Yes, we offer various classes and workshops for adults, including cooking classes, wine tastings, and nutrition seminars. Check our website and social media for announcements about upcoming classes and how to register."
+    },
+    {
+        "question": "How do I leave a tip for the delivery driver?",
+        "answer": "You can leave a tip for the delivery driver when placing your order online or through our app. There is an option to add a tip during the checkout process. You can also tip the driver in cash upon delivery."
+    },
+    {
+        "question": "What are your policies on photography and filming?",
+        "answer": "We welcome photography and filming for personal use. For professional photography or filming, please contact us in advance to obtain permission. We ask that you be respectful of other guests and avoid using flash or disruptive equipment."
+    },
+    {
+        "question": "How can I donate to your charitable initiatives?",
+        "answer": "You can donate to our charitable initiatives through our website or app during checkout. We also host fundraising events and campaigns throughout the year. Check our website and social media for information on upcoming initiatives and how you can contribute."
+    },
+    {
+        "question": "Do you offer any packages for corporate events?",
+        "answer": "Yes, we offer customizable packages for corporate events, including catering, private dining, and team-building activities. Contact our events coordinator through our website or by calling (555) 123-4567 to discuss your requirements and get a quote."
+    },
+    {
+        "question": "How do I become a member of your wine club?",
+        "answer": "To become a member of our wine club, sign up through our website or app. Membership includes exclusive access to wine tastings, special events, and discounts on wine purchases. Check our website for membership details and benefits."
+    },
+    {
+        "question": "Do you offer any health and safety certifications?",
+        "answer": "Yes, we hold various health and safety certifications to ensure the highest standards of hygiene and safety. Our staff is trained in food safety practices, and we undergo regular inspections by local health authorities."
+    },
+    {
+        "question": "How can I request a special dietary meal?",
+        "answer": "To request a special dietary meal, inform our staff of your requirements when placing your order. We offer a variety of options for different dietary needs and will do our best to accommodate your request. If you have specific concerns, please contact us in advance."
+    },
+    {
+        "question": "Do you offer a tasting menu?",
+        "answer": "Yes, we offer a tasting menu that features a selection of our chef’s signature dishes. The tasting menu is available for dinner and can be paired with wine for an enhanced dining experience. Ask your server for details and pricing."
+    },
+    {
+        "question": "How do I leave feedback about my experience?",
+        "answer": "We value your feedback and encourage you to share your experience with us. You can leave feedback through our app, website, or by emailing feedback@ourrestaurant.com. Additionally, we may send you a survey after your visit to gather your thoughts."
+    },
+    {
+        "question": "What is your policy on refunds?",
+        "answer": "If you are not satisfied with your meal, please contact our customer service team through our website, app, or by calling (555) 123-4567. We will review your request and process a refund if applicable. Refunds are typically processed within 5-7 business days."
+    },
+    {
+        "question": "Do you offer any seasonal produce in your dishes?",
+        "answer": "Yes, we use seasonal produce in our dishes to ensure the freshest and most flavorful ingredients. Our menu changes with the seasons to highlight the best of local and seasonal ingredients. Ask your server about our current seasonal offerings."
+    },
+    {
+        "question": "How do I reserve a spot for a special event?",
+        "answer": "To reserve a spot for a special event, visit our website or app and navigate to the 'Events' section. Select the event you're interested in and complete the registration process. For more information, you can also contact our events coordinator."
+    },
+    {
+        "question": "Do you offer any special menus for dietary restrictions?",
+        "answer": "Yes, we offer special menus for various dietary restrictions, including vegan, gluten-free, and low-carb options. Our staff is trained to assist with dietary needs and can recommend suitable dishes from our menu. Please inform us of any specific requirements when placing your order."
+    },
+    {
+        "question": "How can I stay informed about upcoming events?",
+        "answer": "To stay informed about upcoming events, follow us on social media, subscribe to our newsletter, and check our website regularly. We announce new events, promotions, and special offers through these channels."
+    },
+    {
+        "question": "Do you offer any wellness programs?",
+        "answer": "Yes, we offer various wellness programs, including cooking classes, nutrition workshops, and fitness events. These programs are designed to promote a healthy lifestyle and are open to all guests. Check our website and social media for upcoming wellness programs."
+    },
+    {
+        "question": "How do I join your mailing list?",
+        "answer": "To join our mailing list, sign up on our website or through our app. Enter your email address in the subscription form, and you will receive updates on our latest news, events, and exclusive offers."
+    },
+    {
+        "question": "Do you offer any seasonal or holiday-themed events?",
+        "answer": "Yes, we host seasonal and holiday-themed events throughout the year. These events include special menus, decorations, and entertainment to celebrate the occasion. Check our website and social media for announcements and details."
+    },
+    {
+        "question": "How can I book a table for a large group?",
+        "answer": "To book a table for a large group, visit our website or app and navigate to the 'Reservations' section. Enter your group size and preferred date and time. For larger groups or special requests, please contact us directly at (555) 123-4567."
+    },
+    {
+        "question": "Do you offer any cooking classes for children?",
+        "answer": "Yes, we offer cooking classes for children that are designed to be fun and educational. These classes teach basic cooking skills and healthy eating habits. Check our website and social media for upcoming classes and how to register."
+    },
+    {
+        "question": "How do I apply for a job at your restaurant?",
+        "answer": "To apply for a job at our restaurant, visit the 'Careers' section on our website or app. Here, you can view current job openings and submit your application online. You can also email your resume and cover letter to hr@ourrestaurant.com."
+    },
+    {
+        "question": "Do you offer any family meal packages?",
+        "answer": "Yes, we offer family meal packages that are designed to provide a complete and convenient dining experience for families. These packages include a variety of dishes that can be shared. Check our website or app for available options and pricing."
+    },
+    {
+        "question": "Can I request a specific chef to prepare my meal?",
+        "answer": "While we cannot guarantee specific chef requests, our entire culinary team is highly skilled and trained to deliver exceptional meals. If you have a special request or dietary need, please inform our staff, and we will do our best to accommodate you."
+    },
+    {
+        "question": "How do I change my reservation time?",
+        "answer": "To change your reservation time, please contact us directly at (555) 123-4567 or through the 'Reservations' section on our website or app. Provide your reservation details and the new time you'd like to request, and our team will assist you."
+    },
+    {
+        "question": "Do you offer any special events for holidays?",
+        "answer": "Yes, we host special events for various holidays throughout the year, including Christmas, New Year's Eve, and Valentine's Day. These events feature special menus, decorations, and entertainment. Check our website and social media for announcements and details."
+    },
+    {
+        "question": "How do I leave a tip when paying with a credit card?",
+        "answer": "When paying with a credit card, you can add a tip by entering the desired amount on the receipt or payment screen before completing the transaction. Our staff can assist you with this process if needed."
+    },
+    {
+        "question": "Do you offer any cooking demonstrations?",
+        "answer": "Yes, we occasionally offer cooking demonstrations led by our chefs. These demonstrations are a great way to learn new cooking techniques and recipes. Check our website and social media for announcements about upcoming demonstrations and how to register."
+    },
+    {
+        "question": "How can I sign up for exclusive offers?",
+        "answer": "To sign up for exclusive offers, join our mailing list through our website or app. Enter your email address in the subscription form, and you will receive updates on our latest promotions and special offers."
+    },
+    {
+        "question": "Do you offer any eco-friendly or sustainable options?",
+        "answer": "Yes, we are committed to sustainability and offer eco-friendly options throughout our menu and operations. This includes sourcing locally grown ingredients, using biodegradable packaging, and implementing energy-saving practices. Ask our staff for more information about our sustainability initiatives."
+    },
+    {
+        "question": "What is your policy on large group cancellations?",
+        "answer": "For large group cancellations, we request that you notify us at least 48 hours in advance to avoid a cancellation fee. This allows us to manage our reservations effectively and offer the space to other guests. Please contact us directly to cancel or modify your reservation."
+    },
+    {
+        "question": "Do you offer any vegetarian options?",
+        "answer": "Yes, we offer a variety of vegetarian options on our menu. These dishes are clearly marked and include appetizers, main courses, and desserts. Our chefs are also happy to accommodate specific dietary requests."
+    },
+    {
+        "question": "How do I request a high chair for my child?",
+        "answer": "To request a high chair for your child, please inform our staff when making your reservation or upon arrival at the restaurant. We will ensure a high chair is available and set up at your table."
+    },
+    {
+        "question": "Do you offer any discounts for military personnel?",
+        "answer": "Yes, we offer discounts for military personnel with valid ID. Check our website or app for current discount details and terms. Present your military ID when paying to receive the discount."
+    },
+    {
+        "question": "How can I update my delivery address on the app?",
+        "answer": "To update your delivery address, log in to our app and go to the 'Profile' or 'Settings' section. From there, you can add, remove, or update your delivery addresses. Make sure to save any changes before exiting."
+    },
+    {
+        "question": "Do you offer any cultural or themed nights?",
+        "answer": "Yes, we occasionally host cultural or themed nights that feature special menus, decorations, and entertainment inspired by different cultures and themes. Check our website and social media for announcements about upcoming themed nights and how to participate."
+    },
+    {
+        "question": "What is your policy on bringing a cake for a celebration?",
+        "answer": "We allow guests to bring their own cake for celebrations with prior notice. Please inform our staff when making your reservation. There may be a small plating fee for serving the cake. We also offer custom cakes for special occasions, which can be ordered through our restaurant."
+    },
+    {
+        "question": "How do I make a reservation for a private dining room?",
+        "answer": "To reserve a private dining room, please contact us directly through our website or by calling (555) 123-4567. Provide details about your event, including the date, time, and number of guests, and our team will assist you with the booking process."
+    },
+    {
+        "question": "Do you offer any special services for anniversaries?",
+        "answer": "Yes, we offer special services for anniversaries, including custom menus, decorations, and personalized touches to make your celebration memorable. Contact our events coordinator through our website or by calling (555) 123-4567 to discuss your needs."
+    },
+    {
+        "question": "How can I apply a promotional code to my in-restaurant order?",
+        "answer": "To apply a promotional code to your in-restaurant order, inform your server of the code when placing your order. They will enter the code into the system, and the discount will be applied to your bill. If you have any issues, please ask to speak with a manager."
+    },
+    {
+        "question": "Do you offer any special menus for athletes or fitness enthusiasts?",
+        "answer": "Yes, we offer special menus designed for athletes and fitness enthusiasts, featuring high-protein, low-carb, and nutrient-dense options. These dishes are created to support active lifestyles and are clearly marked on our menu."
+    },
+    {
+        "question": "How do I update my subscription preferences?",
+        "answer": "To update your subscription preferences, log in to our website or app and go to the 'Profile' or 'Settings' section. From there, you can manage your email preferences, subscription options, and notification settings. Make sure to save any changes before exiting."
+    },
+    {
+        "question": "What is your policy on late-night reservations?",
+        "answer": "We accept late-night reservations, but availability may be limited depending on the day and time. We recommend making reservations in advance to ensure availability. Please contact us directly if you have specific requests or need assistance with late-night bookings."
+    },
+    {
+        "question": "Do you offer any digital gift cards?",
+        "answer": "Yes, we offer digital gift cards that can be purchased through our website or app. These gift cards can be sent directly to the recipient via email and can be used for dining in, takeout, or delivery orders."
+    },
+    {
+        "question": "How can I stay updated on new features in the app?",
+        "answer": "To stay updated on new features in the app, make sure to enable notifications and update the app regularly. Follow us on social media and subscribe to our newsletter for announcements about new features and updates."
+    },
+    {
+        "question": "Do you offer any classes on sustainable cooking?",
+        "answer": "Yes, we occasionally offer classes on sustainable cooking led by our chefs. These classes focus on using local, seasonal ingredients and eco-friendly cooking practices. Check our website and social media for announcements about upcoming classes and how to register."
+    },
+    {
+        "question": "What is your policy on corkage fees?",
+        "answer": "We do not allow outside alcoholic beverages to be brought into the restaurant, so there is no corkage fee. However, we offer a wide selection of wines, beers, and spirits to complement your meal. Ask your server for recommendations."
+    },
+    {
+        "question": "Do you offer any special services for birthdays?",
+        "answer": "Yes, we offer special services for birthdays, including custom cakes, decorations, and personalized menus. Contact our events coordinator through our website or by calling (555) 123-4567 to discuss your needs and make your birthday celebration memorable."
+    }
+]
+
