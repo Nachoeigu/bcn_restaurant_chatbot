@@ -7,7 +7,7 @@ from langchain_pinecone import PineconeVectorStore
 from langchain_openai import OpenAIEmbeddings
 from langchain_core.documents import Document
 from typing import Dict
-from validators import IndexNameStructure, ExpectedNewData
+from pinecone_validators import IndexNameStructure, ExpectedNewData
 
 
 load_dotenv()

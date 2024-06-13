@@ -1,7 +1,6 @@
 from pydantic import BaseModel, field_validator, Field
 import re
-from typing import Dict
-
+from typing import Dict 
 
 class IndexNameStructure(BaseModel):
     index_name: str = Field(description="Lower case name of the index you want to create")
