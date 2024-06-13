@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.prompts import ChatPromptTemplate
-from constants import SYSTEM_PROMPT
+from constants import SYSTEM_PROMPT_QA
 from langchain_core.output_parsers.string import StrOutputParser
 
 load_dotenv()
@@ -15,7 +15,7 @@ class QAbot:
 
     def __creating_prompt_template(self):
         self.prompt_template = ChatPromptTemplate.from_messages([
-                ("system", SYSTEM_PROMPT),
+                ("system", SYSTEM_PROMPT_QA),
                 ("human", "Based on this context: \n <context> {context} <end_context> \n\n Answer this: \n {question}")
                 ]
             )
