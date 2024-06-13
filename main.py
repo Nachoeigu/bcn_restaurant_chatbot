@@ -1,5 +1,5 @@
-from .models.pinecone_managment import PineconeManagment
-from .models.qa_bot import QAbot
+from models.pinecone_managment import PineconeManagment
+from models.qa_bot import QAbot
 from langchain_openai.chat_models import ChatOpenAI
 from langchain_google_genai.chat_models import ChatGoogleGenerativeAI
 
@@ -23,5 +23,5 @@ if __name__ == '__main__':
                                      search_kwargs={"k": 2})
     qa_bot = QAbot(model = model,
                    retriever= retriever)
-    result = qa_bot.query("Which hours are you open to the public so I can go and eat?") 
+    result = qa_bot.query("What kind of food does the restaurant contains?") 
     print(result)
