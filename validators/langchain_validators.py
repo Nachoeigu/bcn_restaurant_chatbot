@@ -1,12 +1,15 @@
 from langchain_core.pydantic_v1 import BaseModel, Field, validator
 import re
-from operator import itemgetter
-
 
 class ExpectedOutputBotTA(BaseModel):
     go_database: bool = Field(..., description = "True if it is question is about food catalog or table availability. Otherwise, False.")
 
-class ExpectedOutputBotDA(BaseModel):
+class ExpectedResponseOutputBotDA(BaseModel):
+    """Structuring the response of the LLM"""
+    response: str = Field(..., description = "The final conclusion based on the provided info. If you don´t know, retrieve empty response.")
+    solved: bool = Field(..., description = "If the answer couldn´t be solved False. Otherwise, True")
+
+class ExpectedSQLOutputBotDA(BaseModel):
     """Ensuring that the output of the LLM is a SQL query without more information than the query itself"""
     query: str = Field(..., description = "SQL Query that solves the user question")
     user_query: str = Field(..., description = "The question the user made")

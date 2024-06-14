@@ -24,6 +24,7 @@ class ToolAnalyzer:
         )
 
     def analyzing_query(self, user_query):
+        print("Analyzing if we need to go to Vectorstore or SQL Database...")
         chain = self.prompt | self.model | self.parser
 
         return chain.invoke({'user_query':user_query})
