@@ -27,15 +27,16 @@ def analyzing_with_vectorstore(user_query):
     return qa_bot.query(user_query) 
 
 if __name__ == '__main__':
-    user_query = input("Make your query: ")
-    result_toolanalyzer = ta_bot.analyzing_query(user_query = user_query)
-    if result_toolanalyzer.go_database:
-        da_result = analyzing_with_data_analyst(user_query = user_query)
-        if da_result.solved == False:
-            print("Answer not present in our SQL database...")
-            result = analyzing_with_vectorstore(user_query)
+    while True:
+        user_query = input("Make your query: ")
+        result_toolanalyzer = ta_bot.analyzing_query(user_query = user_query)
+        if result_toolanalyzer.go_database:
+            da_result = analyzing_with_data_analyst(user_query = user_query)
+            if da_result.solved == False:
+                print("Answer not present in our SQL database...")
+                result = analyzing_with_vectorstore(user_query)
+            else:
+                result = da_result.response
         else:
-            result = da_result.response
-    else:
-        result = analyzing_with_vectorstore(user_query)
-    print(f"----------------\nGENERATED ANSWER: \n{result}\n----------------")
+            result = analyzing_with_vectorstore(user_query)
+        print(f"----------------\nGENERATED ANSWER: \n{result}\n----------------")
