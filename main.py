@@ -7,8 +7,8 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 
 
 #model = ChatGoogleGenerativeAI(model = 'gemini-1.5-pro', temperature = 0)
-model = ChatOpenAI(model = 'gpt-4o', temperature = 0)
-#model = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0)
+#model = ChatOpenAI(model = 'gpt-4o', temperature = 0)
+model = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0)
 app = PineconeManagment()
 ta_bot = ToolAnalyzer(model = model)
 def analyzing_with_data_analyst(user_query):
