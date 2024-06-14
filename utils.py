@@ -1,19 +1,9 @@
 import sqlite3
 from models.pinecone_managment import PineconeManagment
 from dotenv import load_dotenv
-from langchain.tools import tool
 
 load_dotenv()
 
-@tool
-def analyzing_secure_sql_query(query_definition:str) -> str:
-    """It analyzes if the query contains delete or alter statements"""
-    prohibited_keywords = ['delete table', 'truncate table', 'drop table','delete view', 'truncate view', 'drop view','delete from','alter column','alter table']
-    for warning_keyword in prohibited_keywords:
-        if warning_keyword in query_definition.lower():
-            raise Exception(f"Insecure query: {query_definition}")
-    
-    return query_definition
 
 def vdb_creation(index_name):
     """

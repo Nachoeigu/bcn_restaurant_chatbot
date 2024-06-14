@@ -4,7 +4,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
 from constants import SYSTEM_PROMPT_TA
 from langchain.output_parsers import PydanticOutputParser
-from langchain_validators import ExpectedOutputBotTA
+from validators.langchain_validators import ExpectedOutputBotTA
 
 load_dotenv()
 
