@@ -1,9 +1,19 @@
 import sqlite3
 from models.pinecone_managment import PineconeManagment
 from dotenv import load_dotenv
+from langchain.tools import  tool
 
 load_dotenv()
 
+
+@tool
+def evaluating_sql_output(result):
+    """Evaluating if the result of the SQL execution retrieves something or not"""
+    if result == '':
+        return 'The query didn´t provide any row'
+    else:
+        return result
+    
 def get_table_info(cursor, table_name):
     cursor.execute(f"PRAGMA table_info({table_name})")
     return cursor.fetchall()
