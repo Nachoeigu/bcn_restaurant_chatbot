@@ -39,10 +39,4 @@ def answering_query(request: str) -> str:
 
 @app.post("/model")
 def provide_used_model():
-    return model._get_ls_params()['ls_model_name']
-
-
-
-if __name__ == '__main__':
-    port = 8080
-    uvicorn.run("app:app", host = '0.0.0.0', port = port)
+    return "You are receiving answers from the model: \n-"+ model._get_ls_params()['ls_model_name']
