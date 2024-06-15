@@ -13,13 +13,10 @@ Applied AI approach in this project: Vector Databases Managment, Retrieval Augme
     -LANGCHAIN_PROJECT
     -OPENAI_API_KEY
     -GOOGLE_API_KEY
-    -REDSHIFT_HOST
-    -REDSHIFT_PORT
-    -REDSHIFT_DATABASE
-    -REDSHIFT_USERNAME
-    -REDSHIFT_PASSWORD
     -WORKDIR
 
-1) First run the generate_database.py script so you have the database available.
+2) Executes generate_local_database.py. This will create the restaurant database for you.
 
-2) In the main file you have the entry point of the process. 
+3)...
+
+ In the main file you have the entry point of the process. 

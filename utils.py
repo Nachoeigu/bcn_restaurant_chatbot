@@ -10,18 +10,6 @@ sys.path.append(WORKDIR)
 import sqlite3
 from models.pinecone_managment import PineconeManagment
 from langchain.tools import  tool
-import psycopg2
-
-def connection_redshift():
-    connection = psycopg2.connect(
-        dbname=os.getenv("REDSHIFT_DATABASE"),
-        user=os.getenv("REDSHIFT_USERNAME"),
-        password=os.getenv("REDSHIFT_PASSWORD"),
-        host=os.getenv("REDSHIFT_HOST"),
-        port=os.getenv("REDSHIFT_PORT")
-    )
-
-    return connection
 
 
 def read_query(query_name):
@@ -39,6 +27,13 @@ def evaluating_sql_output(result):
     else:
         return result
     
+import os
+import sqlite3
+import psycopg2
+from dotenv import load_dotenv
+
+load_dotenv()
+
 def get_table_info(cursor, table_name):
     cursor.execute(f"PRAGMA table_info({table_name})")
     return cursor.fetchall()
@@ -60,8 +55,9 @@ def get_column_statistics(cursor, table_name, column_name):
         min_val, max_val = cursor.fetchone()
         return f"contains more than 15 unique values. The range of values goes from {min_val} to {max_val}"
 
-def generate_sql_description(db_path):
-    connection = sqlite3.connect(db_path)
+
+def get_info_from_database():
+    connection = sqlite3.connect(f'{WORKDIR}/database/restaurant_data.db')
     cursor = connection.cursor()
     
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
@@ -110,23 +106,11 @@ def generate_sql_description(db_path):
     
     connection.close()
     
-    return result
-
-def get_info_from_database(db_path = './local_database/restaurant_data.db'):
-    return generate_sql_description(db_path)
-
-def vdb_creation(index_name):
-    """
-    This function is used for creation of the Vector Database. Only one time.
-    """
-    app = PineconeManagment()
-    docs = app.reading_datasource()
-    app.creating_index(index_name = index_name, docs = docs)
-
-    return app.loading_vdb(index_name = 'bcnrestaurant')
+    with open(f"{WORKDIR}/database/database_info.txt",'w') as file:
+        file.write(result)
 
 def run_query(query):
-    db_path = f'{WORKDIR}/local_database/restaurant_catalog.db'
+    db_path = f'{WORKDIR}/local_database/restaurant_data.db'
     connection = sqlite3.connect(db_path)
     c = connection.cursor()
     try:

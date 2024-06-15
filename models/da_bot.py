@@ -14,7 +14,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 from langchain_openai.chat_models import ChatOpenAI
-from constants import TABLES_INFO, SYSTEM_PROMPT_DA
+from constants import SYSTEM_PROMPT_DA
 from langchain.output_parsers import PydanticOutputParser
 from validators.langchain_validators import ExpectedSQLOutputBotDA,ExpectedResponseOutputBotDA
 from utils import evaluating_sql_output
@@ -22,7 +22,11 @@ from utils import evaluating_sql_output
 class DataAnalyst:
 
     def __init__(self, model):
-        self.db = SQLDatabase.from_uri("sqlite:///local_database/restaurant_data.db")
+        self.db = SQLDatabase.from_uri(f"sqlite:///{WORKDIR}/database/restaurant_data.db")
+        
+        with open(f"{WORKDIR}/database/database_info.txt",'r') as file:
+            self.tables_info = file.read()
+
         self.model_structured_for_sql_development = model.with_structured_output(ExpectedSQLOutputBotDA)
         self.model_structed_for_answering = model.with_structured_output(ExpectedResponseOutputBotDA)
         self.execute_query = QuerySQLDataBaseTool(db=self.db)
@@ -35,7 +39,7 @@ class DataAnalyst:
             template="{system_prompt}.\n {tables_info}\n\n The question you should answer with a SQL query is: {user_query}\n",
             input_variables=["user_query"],
             partial_variables={
-                "tables_info":TABLES_INFO,
+                "tables_info":self.tables_info,
                 "system_prompt": SYSTEM_PROMPT_DA},
         )
 
@@ -44,7 +48,6 @@ class DataAnalyst:
             template="{system_prompt}.\n User question: {user_query}\n SQL Query: {query} \n SQL Result: {result}.",
             input_variables=["user_query","query","result"],
             partial_variables={
-                "tables_info":TABLES_INFO,
                 "system_prompt": "Given the following user question, its corresponding SQL query, and the output of that SQL query, answer the user question providing all the details needed."},
         )
         

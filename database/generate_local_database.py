@@ -8,10 +8,10 @@ os.chdir(WORKDIR)
 sys.path.append(WORKDIR)
 
 import sqlite3
-from utils import read_query
+from utils import read_query, get_info_from_database
 
 def setup_database():
-    connection = sqlite3.connectionect(os.path.join(os.path.dirname(__file__), 'restaurant_data.db'))
+    connection = sqlite3.Connection(f'{WORKDIR}/database/restaurant_data.db')
     cursor = connection.cursor()
     cursor.execute(read_query("create_restaurant_catalog"))
     cursor.executescript(read_query("populate_restaurant_catalog"))
@@ -22,6 +22,9 @@ def setup_database():
     
     connection.commit()
     connection.close()
+
+    get_info_from_database()
+
 
 if __name__ == "__main__":
     setup_database()
