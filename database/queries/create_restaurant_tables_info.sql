@@ -1,4 +1,4 @@
-CREATE TABLE tables_info (
+CREATE TABLE IF NOT EXISTS tables_info (
     table_id INT PRIMARY KEY,
     location VARCHAR(50),
     is_private BOOLEAN,

@@ -1,9 +1,22 @@
-import sqlite3
-from models.pinecone_managment import PineconeManagment
+import os
 from dotenv import load_dotenv
-from langchain.tools import  tool
+import sys
 
 load_dotenv()
+WORKDIR=os.getenv("WORKDIR")
+os.chdir(WORKDIR)
+sys.path.append(WORKDIR)
+
+import sqlite3
+from models.pinecone_managment import PineconeManagment
+from langchain.tools import  tool
+
+def read_query(query_name):
+    current_directory = os.path.dirname(__file__)
+    with open(current_directory + f'/local_database/queries/{query_name}.sql', 'r') as file:
+        sql_query = file.read()
+
+    return sql_query
 
 
 @tool

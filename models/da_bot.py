@@ -1,3 +1,12 @@
+import os
+from dotenv import load_dotenv
+import sys
+
+load_dotenv()
+WORKDIR=os.getenv("WORKDIR")
+os.chdir(WORKDIR)
+sys.path.append(WORKDIR)
+
 from langchain_community.utilities import SQLDatabase
 from langchain_community.tools.sql_database.tool import QuerySQLDataBaseTool
 from operator import itemgetter

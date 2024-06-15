@@ -1,3 +1,12 @@
+import os
+from dotenv import load_dotenv
+import sys
+
+load_dotenv()
+WORKDIR=os.getenv("WORKDIR")
+os.chdir(WORKDIR)
+sys.path.append(WORKDIR)
+
 from langchain_core.pydantic_v1 import BaseModel, Field, validator
 import re
 

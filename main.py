@@ -1,3 +1,12 @@
+import os
+from dotenv import load_dotenv
+import sys
+
+load_dotenv()
+WORKDIR=os.getenv("WORKDIR")
+os.chdir(WORKDIR)
+sys.path.append(WORKDIR)
+
 from models.pinecone_managment import PineconeManagment
 from models.qa_bot import QAbot
 from models.da_bot import DataAnalyst

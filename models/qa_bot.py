@@ -1,10 +1,17 @@
+import os
 from dotenv import load_dotenv
+import sys
+
+load_dotenv()
+WORKDIR=os.getenv("WORKDIR")
+os.chdir(WORKDIR)
+sys.path.append(WORKDIR)
+
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.prompts import ChatPromptTemplate
 from constants import SYSTEM_PROMPT_QA
 from langchain_core.output_parsers.string import StrOutputParser
 
-load_dotenv()
 
 class QAbot:
 

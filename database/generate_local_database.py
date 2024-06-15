@@ -1,13 +1,14 @@
-import sqlite3
 import os
+from dotenv import load_dotenv
+import sys
 
-def read_query(query_name):
-    current_directory = os.path.dirname(__file__)
-    with open(current_directory + f'/queries/{query_name}.sql', 'r') as file:
-        sql_query = file.read()
+load_dotenv()
+WORKDIR=os.getenv("WORKDIR")
+os.chdir(WORKDIR)
+sys.path.append(WORKDIR)
 
-    return sql_query
-
+import sqlite3
+from utils import read_query
 
 def setup_database():
     conn = sqlite3.connect(os.path.join(os.path.dirname(__file__), 'restaurant_data.db'))

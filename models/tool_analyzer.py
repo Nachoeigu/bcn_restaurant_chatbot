@@ -1,4 +1,12 @@
+import os
 from dotenv import load_dotenv
+import sys
+
+load_dotenv()
+WORKDIR=os.getenv("WORKDIR")
+os.chdir(WORKDIR)
+sys.path.append(WORKDIR)
+
 from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
@@ -6,7 +14,6 @@ from constants import SYSTEM_PROMPT_TA
 from langchain.output_parsers import PydanticOutputParser
 from validators.langchain_validators import ExpectedOutputBotTA
 
-load_dotenv()
 
 class ToolAnalyzer:
 

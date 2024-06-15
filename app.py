@@ -1,3 +1,12 @@
+import os
+from dotenv import load_dotenv
+import sys
+
+load_dotenv()
+WORKDIR=os.getenv("WORKDIR")
+os.chdir(WORKDIR)
+sys.path.append(WORKDIR)
+
 from fastapi import FastAPI
 #from mangum import Magnum
 from models.pinecone_managment import PineconeManagment

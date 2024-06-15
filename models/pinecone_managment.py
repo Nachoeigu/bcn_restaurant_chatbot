@@ -1,7 +1,15 @@
+import os
+from dotenv import load_dotenv
+import sys
+
+load_dotenv()
+WORKDIR=os.getenv("WORKDIR")
+os.chdir(WORKDIR)
+sys.path.append(WORKDIR)
+
 from langchain_community.document_loaders import JSONLoader
 from pinecone import Pinecone, ServerlessSpec
 from dotenv import load_dotenv
-import os
 import time
 from langchain_pinecone import PineconeVectorStore
 from langchain_openai import OpenAIEmbeddings
@@ -9,8 +17,6 @@ from langchain_core.documents import Document
 from typing import Dict
 from validators.pinecone_validators import IndexNameStructure, ExpectedNewData
 
-
-load_dotenv()
 
 class PineconeManagment:
 

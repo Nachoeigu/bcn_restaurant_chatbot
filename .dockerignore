@@ -1,2 +1,3 @@
 *.env
 datasource/
+__pycache__/

@@ -8,3 +8,4 @@ langchain-google-genai
 fastapi
 mangum
 uvicorn
+psycopg2-binary
