@@ -15,8 +15,6 @@ Applied AI approach in this project: Vector Databases Managment, Retrieval Augme
     -GOOGLE_API_KEY
     -WORKDIR
 
-2) Executes generate_local_database.py. This will create the restaurant database for you.
+2) Executes generate_local_database.py. This will create the restaurant database and database info for you.
 
-3)...
-
- In the main file you have the entry point of the process. 
+3) Executes the python main.py for testing the entire workflow.

@@ -14,7 +14,6 @@ from models.tool_analyzer import ToolAnalyzer
 from langchain_openai.chat_models import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-
 #model = ChatGoogleGenerativeAI(model = 'gemini-1.5-pro', temperature = 0)
 #model = ChatOpenAI(model = 'gpt-4o', temperature = 0)
 model = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0)
@@ -42,7 +41,7 @@ if __name__ == '__main__':
         result_toolanalyzer = ta_bot.analyzing_query(user_query = user_query)
         if result_toolanalyzer.go_database:
             da_result = analyzing_with_data_analyst(user_query = user_query)
-            if da_result.solved == False:
+            if (da_result.solved == False)|(da_result.response == ''):
                 print("Answer not present in our SQL database...")
                 result = analyzing_with_vectorstore(user_query)
             else:

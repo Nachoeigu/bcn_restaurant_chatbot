@@ -13,6 +13,10 @@ from langchain_core.prompts import PromptTemplate
 from constants import SYSTEM_PROMPT_TA
 from langchain.output_parsers import PydanticOutputParser
 from validators.langchain_validators import ExpectedOutputBotTA
+from langchain_core.callbacks import FileCallbackHandler
+from langchain.globals import set_debug
+
+set_debug(True)
 
 
 class ToolAnalyzer:

@@ -11,6 +11,10 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_core.prompts import ChatPromptTemplate
 from constants import SYSTEM_PROMPT_QA
 from langchain_core.output_parsers.string import StrOutputParser
+from langchain_core.callbacks import FileCallbackHandler
+from langchain.globals import set_debug
+
+set_debug(True)
 
 
 class QAbot:

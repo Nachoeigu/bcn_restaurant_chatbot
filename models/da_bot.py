@@ -18,6 +18,10 @@ from constants import SYSTEM_PROMPT_DA
 from langchain.output_parsers import PydanticOutputParser
 from validators.langchain_validators import ExpectedSQLOutputBotDA,ExpectedResponseOutputBotDA
 from utils import evaluating_sql_output
+from langchain_core.callbacks import FileCallbackHandler
+from langchain.globals import set_debug
+
+set_debug(True)
 
 class DataAnalyst:
 
