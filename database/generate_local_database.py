@@ -11,17 +11,17 @@ import sqlite3
 from utils import read_query
 
 def setup_database():
-    conn = sqlite3.connect(os.path.join(os.path.dirname(__file__), 'restaurant_data.db'))
-    c = conn.cursor()
-    c.execute(read_query("create_restaurant_catalog"))
-    c.executescript(read_query("populate_restaurant_catalog"))
-    c.execute(read_query("create_restaurant_availability"))
-    c.executescript(read_query("populate_restaurant_availability"))
-    c.execute(read_query("create_restaurant_tables_info"))
-    c.executescript(read_query("populate_restaurant_tables_info"))
+    connection = sqlite3.connectionect(os.path.join(os.path.dirname(__file__), 'restaurant_data.db'))
+    cursor = connection.cursor()
+    cursor.execute(read_query("create_restaurant_catalog"))
+    cursor.executescript(read_query("populate_restaurant_catalog"))
+    cursor.execute(read_query("create_restaurant_availability"))
+    cursor.executescript(read_query("populate_restaurant_availability"))
+    cursor.execute(read_query("create_restaurant_tables_info"))
+    cursor.executescript(read_query("populate_restaurant_tables_info"))
     
-    conn.commit()
-    conn.close()
+    connection.commit()
+    connection.close()
 
 if __name__ == "__main__":
     setup_database()

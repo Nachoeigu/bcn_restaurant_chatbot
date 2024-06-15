@@ -31,7 +31,7 @@ class PineconeManagment:
 
     def reading_datasource(self):
         loader = JSONLoader(
-            file_path='./datasource/faq.json',
+            file_path=f'{WORKDIR}/rag_data/faq.json',
             jq_schema='.[]',
             text_content=False,
             metadata_func=self.__extract_metadata)
@@ -80,3 +80,5 @@ class PineconeManagment:
                 )
         
         return docs
+    
+

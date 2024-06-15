@@ -10,10 +10,22 @@ sys.path.append(WORKDIR)
 import sqlite3
 from models.pinecone_managment import PineconeManagment
 from langchain.tools import  tool
+import psycopg2
+
+def connection_redshift():
+    connection = psycopg2.connect(
+        dbname=os.getenv("REDSHIFT_DATABASE"),
+        user=os.getenv("REDSHIFT_USERNAME"),
+        password=os.getenv("REDSHIFT_PASSWORD"),
+        host=os.getenv("REDSHIFT_HOST"),
+        port=os.getenv("REDSHIFT_PORT")
+    )
+
+    return connection
+
 
 def read_query(query_name):
-    current_directory = os.path.dirname(__file__)
-    with open(current_directory + f'/local_database/queries/{query_name}.sql', 'r') as file:
+    with open(WORKDIR + f'/database/queries/{query_name}.sql', 'r') as file:
         sql_query = file.read()
 
     return sql_query
@@ -49,8 +61,8 @@ def get_column_statistics(cursor, table_name, column_name):
         return f"contains more than 15 unique values. The range of values goes from {min_val} to {max_val}"
 
 def generate_sql_description(db_path):
-    conn = sqlite3.connect(db_path)
-    cursor = conn.cursor()
+    connection = sqlite3.connect(db_path)
+    cursor = connection.cursor()
     
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
     tables = cursor.fetchall()
@@ -96,7 +108,7 @@ def generate_sql_description(db_path):
         
         result += create_statement + sample_rows_str + column_stats + "\n"
     
-    conn.close()
+    connection.close()
     
     return result
 
@@ -114,14 +126,14 @@ def vdb_creation(index_name):
     return app.loading_vdb(index_name = 'bcnrestaurant')
 
 def run_query(query):
-    db_path = './local_database/restaurant_catalog.db'
-    conn = sqlite3.connect(db_path)
-    c = conn.cursor()
+    db_path = f'{WORKDIR}/local_database/restaurant_catalog.db'
+    connection = sqlite3.connect(db_path)
+    c = connection.cursor()
     try:
         c.execute(query)
         result = c.fetchall()
     except sqlite3.Error as e:
         print(f"An error occurred: {e}")
     finally:
-        conn.close()
+        connection.close()
         return result
