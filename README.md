@@ -7,13 +7,12 @@ Applied AI approach in this project: Vector Databases Managment, Retrieval Augme
 ### How to use this script?
 
 1) Set .env variables:
-    -PINECONE_API_KEY
-    -LANGCHAIN_API_KEY
-    -LANGCHAIN_TRACING_V2
-    -LANGCHAIN_PROJECT
-    -OPENAI_API_KEY
-    -GOOGLE_API_KEY
-    -WORKDIR
+    - PINECONE_API_KEY
+    - LANGCHAIN_API_KEY
+    - LANGCHAIN_TRACING_V2
+    - LANGCHAIN_PROJECT
+    - OPENAI_API_KEY
+    - WORKDIR
 
 2) Executes generate_local_database.py. This will create the restaurant database and database info for you.
 

@@ -12,10 +12,11 @@ from models.qa_bot import QAbot
 from models.da_bot import DataAnalyst
 from models.tool_analyzer import ToolAnalyzer
 from langchain_openai.chat_models import ChatOpenAI
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_google_vertexai import ChatVertexAI
 
+model = ChatVertexAI(model="gemini-pro", temperature=0)
 #model = ChatGoogleGenerativeAI(model = 'gemini-1.5-pro', temperature = 0)
-model = ChatOpenAI(model = 'gpt-4o', temperature = 0)
+#model = ChatOpenAI(model = 'gpt-4o', temperature = 0)
 #model = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0)
 app = PineconeManagment()
 ta_bot = ToolAnalyzer(model = model)
