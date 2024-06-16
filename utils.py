@@ -110,7 +110,7 @@ def get_info_from_database():
         file.write(result)
 
 def run_query(query):
-    db_path = f'{WORKDIR}/local_database/restaurant_data.db'
+    db_path = f'{WORKDIR}/database/restaurant_data.db'
     connection = sqlite3.connect(db_path)
     c = connection.cursor()
     try:

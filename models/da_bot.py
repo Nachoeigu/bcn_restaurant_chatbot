@@ -14,7 +14,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 from langchain_openai.chat_models import ChatOpenAI
-from constants import SYSTEM_PROMPT_DA
+from constants import SYSTEM_PROMPT_DA, SYSTEM_PROMPT_COMMUNICATOR
 from langchain.output_parsers import PydanticOutputParser
 from validators.langchain_validators import ExpectedSQLOutputBotDA,ExpectedResponseOutputBotDA
 from utils import evaluating_sql_output
@@ -49,10 +49,10 @@ class DataAnalyst:
 
     def __creating_template_sql_to_response(self):
         self.sql_to_response_prompt = PromptTemplate(
-            template="{system_prompt}.\n User question: {user_query}\n SQL Query: {query} \n SQL Result: {result}.",
+            template="{system_prompt}.\n Now that you understand, here is the real scenario you should answer.\n User question: {user_query}\n SQL Query: {query} \n SQL Result: {result}.",
             input_variables=["user_query","query","result"],
             partial_variables={
-                "system_prompt": "Given the following user question, its corresponding SQL query, and the output of that SQL query, answer the user question providing all the details needed."},
+                "system_prompt": SYSTEM_PROMPT_COMMUNICATOR},
         )
         
     def __creating_chain(self):
