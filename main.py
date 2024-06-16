@@ -14,19 +14,16 @@ from models.tool_analyzer import ToolAnalyzer
 from langchain_openai.chat_models import ChatOpenAI
 from langchain_google_vertexai import ChatVertexAI
 
-model = ChatVertexAI(model="gemini-pro", temperature=0)
-#model = ChatGoogleGenerativeAI(model = 'gemini-1.5-pro', temperature = 0)
-#model = ChatOpenAI(model = 'gpt-4o', temperature = 0)
-#model = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0)
-app = PineconeManagment()
-ta_bot = ToolAnalyzer(model = model)
-def analyzing_with_data_analyst(user_query):
+
+def analyzing_with_data_analyst(user_query, model):
     print("Analyzing on our SQL database")
     da_bot = DataAnalyst(model = model)
     da_result = da_bot.analyzing_user_query(user_query = user_query)
 
     return da_result
-def analyzing_with_vectorstore(user_query):
+
+
+def analyzing_with_vectorstore(user_query, model):
     print("Going to vector database to find result...")
     app.loading_vdb(index_name = 'bcnrestaurant')
     retriever = app.vdb.as_retriever(search_type="similarity", 
@@ -37,16 +34,23 @@ def analyzing_with_vectorstore(user_query):
     return qa_bot.query(user_query) 
 
 if __name__ == '__main__':
+    #model = ChatVertexAI(model="gemini-pro", temperature=0)
+    #model = ChatGoogleGenerativeAI(model = 'gemini-1.5-pro', temperature = 0)
+    #model = ChatOpenAI(model = 'gpt-4o', temperature = 0)
+    model = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0)
+    app = PineconeManagment()
+    ta_bot = ToolAnalyzer(model = model)
+
     while True:
         user_query = input("Make your query: ")
         result_toolanalyzer = ta_bot.analyzing_query(user_query = user_query)
         if result_toolanalyzer.go_database:
-            da_result = analyzing_with_data_analyst(user_query = user_query)
+            da_result = analyzing_with_data_analyst(user_query = user_query, model = model)
             if (da_result.solved == False)|(da_result.response == ''):
                 print("Answer not present in our SQL database...")
-                result = analyzing_with_vectorstore(user_query)
+                result = analyzing_with_vectorstore(user_query, model)
             else:
                 result = da_result.response
         else:
-            result = analyzing_with_vectorstore(user_query)
+            result = analyzing_with_vectorstore(user_query, model)
         print(f"----------------\nGENERATED ANSWER: \n{result}\n----------------")
