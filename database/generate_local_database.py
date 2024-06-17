@@ -19,6 +19,9 @@ def setup_database():
     cursor.executescript(read_query("populate_restaurant_availability"))
     cursor.execute(read_query("create_restaurant_tables_info"))
     cursor.executescript(read_query("populate_restaurant_tables_info"))
+    cursor.execute(read_query("create_restaurant_metadata"))
+    cursor.executescript(read_query("populate_restaurant_metadata"))
+    
     
     connection.commit()
     connection.close()
@@ -28,3 +31,6 @@ def setup_database():
 
 if __name__ == "__main__":
     setup_database()
+
+
+
