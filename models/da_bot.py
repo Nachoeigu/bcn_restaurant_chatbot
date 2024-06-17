@@ -49,7 +49,7 @@ class DataAnalyst:
 
     def __creating_template_sql_to_response(self):
         self.sql_to_response_prompt = PromptTemplate(
-            template="{system_prompt}.\n Now that you understand, here is the real scenario you should answer.\n User question: {user_query}\n SQL Query: {query} \n SQL Result: {result}.",
+            template="{system_prompt}.\n Now that you understand, answer this.\n User question: {user_query}\n SQL Query: {query} \n SQL Result: {result}.",
             input_variables=["user_query","query","result"],
             partial_variables={
                 "system_prompt": SYSTEM_PROMPT_COMMUNICATOR},
