@@ -11,11 +11,8 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_core.prompts import ChatPromptTemplate
 from constants import SYSTEM_PROMPT_QA
 from langchain_core.output_parsers.string import StrOutputParser
-from langchain_core.callbacks import FileCallbackHandler
 from langchain.globals import set_debug
-from langchain_community.tools import ElevenLabsText2SpeechTool
-from langchain_core.runnables import RunnableLambda
-
+from models.tts_bot import TextToSpeech
 
 load_dotenv()
 set_debug(True)
@@ -26,7 +23,7 @@ class QAbot:
     def __init__(self, model, retriever):
         self.model = model
         self.retriever = retriever
-        self.tts = ElevenLabsText2SpeechTool()
+        self.tts = TextToSpeech()
         self.__creating_prompt_template()
 
     def __creating_prompt_template(self):
@@ -43,7 +40,6 @@ class QAbot:
                 | self.prompt_template \
                 | self.model \
                 | StrOutputParser() \
-                | RunnableLambda(self.tts.run) \
-                | RunnableLambda(self.tts.play)
+                | self.tts.generating_audio
 
         return chain.invoke(user_query)

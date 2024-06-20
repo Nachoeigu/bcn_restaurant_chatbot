@@ -11,27 +11,11 @@ from models.pinecone_managment import PineconeManagment
 from models.qa_bot import QAbot
 from models.da_bot import DataAnalyst
 from models.tool_analyzer import ToolAnalyzer
+from models.tts_bot import TextToSpeech
 from langchain_openai.chat_models import ChatOpenAI
 from langchain_google_vertexai import ChatVertexAI
+from utils import loading_retriever
 
-
-def analyzing_with_data_analyst(user_query, model):
-    print("Analyzing on our SQL database")
-    da_bot = DataAnalyst(model = model)
-    da_result = da_bot.analyzing_user_query(user_query = user_query)
-
-    return da_result
-
-
-def analyzing_with_vectorstore(user_query, model):
-    print("Going to vector database to find result...")
-    app.loading_vdb(index_name = 'bcnrestaurant')
-    retriever = app.vdb.as_retriever(search_type="similarity", 
-                                    search_kwargs={"k": 2})
-    qa_bot = QAbot(model = model,
-                retriever= retriever)
-
-    return qa_bot.query(user_query) 
 
 if __name__ == '__main__':
     #model = ChatVertexAI(model="gemini-pro", temperature=0)
@@ -40,17 +24,23 @@ if __name__ == '__main__':
     model = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0)
     app = PineconeManagment()
     ta_bot = ToolAnalyzer(model = model)
+    da_bot = DataAnalyst(model = model)
+    retriever = loading_retriever(app = app)
+    qa_bot = QAbot(model = model,
+                retriever= retriever)
+    tts_bot = TextToSpeech()
 
     while True:
         user_query = input("Make your query: ")
         result_toolanalyzer = ta_bot.analyzing_query(user_query = user_query)
         if result_toolanalyzer.go_database:
-            da_result = analyzing_with_data_analyst(user_query = user_query, model = model)
+            da_result = da_bot.analyzing_user_query(user_query = user_query)
             if (da_result.solved == False)|(da_result.response == ''):
                 print("Answer not present in our SQL database...")
-                result = analyzing_with_vectorstore(user_query, model)
+                result = qa_bot.query(user_query = user_query)
             else:
                 result = da_result.response
-                print("Response: \n" + result)
         else:
-            result = analyzing_with_vectorstore(user_query, model)
+            result = qa_bot.query(user_query = user_query)
+
+        tts_bot.generating_audio(result)

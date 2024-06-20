@@ -8,11 +8,19 @@ os.chdir(WORKDIR)
 sys.path.append(WORKDIR)
 
 import sqlite3
-from models.pinecone_managment import PineconeManagment
 from langchain.tools import  tool
 from database.database_descriptor import DatabaseDescriber
 
+
 load_dotenv()
+
+def loading_retriever(app):
+    print("Going to vector database to find result...")
+    app.loading_vdb(index_name = 'bcnrestaurant')
+    retriever = app.vdb.as_retriever(search_type="similarity", 
+                                    search_kwargs={"k": 2})
+    
+    return retriever
 
 def read_query(query_name):
     with open(WORKDIR + f'/database/queries/{query_name}.sql', 'r') as file:

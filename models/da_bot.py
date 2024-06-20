@@ -10,15 +10,11 @@ sys.path.append(WORKDIR)
 from langchain_community.utilities import SQLDatabase
 from langchain_community.tools.sql_database.tool import QuerySQLDataBaseTool
 from operator import itemgetter
-from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda
-from langchain_openai.chat_models import ChatOpenAI
 from constants import SYSTEM_PROMPT_DA, SYSTEM_PROMPT_COMMUNICATOR
-from langchain.output_parsers import PydanticOutputParser
 from validators.langchain_validators import ExpectedSQLOutputBotDA,ExpectedResponseOutputBotDA
 from utils import evaluating_sql_output
-from langchain_core.callbacks import FileCallbackHandler
 from langchain.globals import set_debug
 
 set_debug(True)
@@ -68,7 +64,8 @@ class DataAnalyst:
         translating_sql_to_audience = self.sql_to_response_prompt \
                                         | self.model_structed_for_answering
     
-        return querying_db | translating_sql_to_audience
+        return querying_db \
+                | translating_sql_to_audience
 
     def analyzing_user_query(self, user_query):
         return self.chain.invoke({'user_query': user_query})
