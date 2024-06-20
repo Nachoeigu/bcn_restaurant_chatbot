@@ -51,6 +51,6 @@ if __name__ == '__main__':
                 result = analyzing_with_vectorstore(user_query, model)
             else:
                 result = da_result.response
+                print("Response: \n" + result)
         else:
             result = analyzing_with_vectorstore(user_query, model)
-        print(f"----------------\nGENERATED ANSWER: \n{result}\n----------------")
