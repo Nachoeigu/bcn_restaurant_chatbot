@@ -9,3 +9,5 @@ mangum
 uvicorn
 langchain_google_vertexai
 elevenlabs==0.2.27
+SpeechRecognition
+pyaudio

@@ -39,7 +39,6 @@ class QAbot:
         chain = {"context": self.retriever | self.__format_retrieved_docs, "question": RunnablePassthrough()} \
                 | self.prompt_template \
                 | self.model \
-                | StrOutputParser() \
-                | self.tts.generating_audio
+                | StrOutputParser()
 
         return chain.invoke(user_query)
