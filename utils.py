@@ -10,6 +10,7 @@ sys.path.append(WORKDIR)
 import sqlite3
 from langchain.tools import  tool
 from database.database_descriptor import DatabaseDescriber
+from datetime import datetime, timedelta
 
 
 load_dotenv()
@@ -22,11 +23,22 @@ def loading_retriever(app):
     
     return retriever
 
-def read_query(query_name):
+def read_query(query_name,current_date:bool=False):
     with open(WORKDIR + f'/database/queries/{query_name}.sql', 'r') as file:
         sql_query = file.read()
 
-    return sql_query
+    if current_date == False:
+        return sql_query
+    else:
+        updated_query = sql_query
+        for day in range(1, 31): 
+            period = f"{day}_days_ahead"
+            date = datetime.now().date() + timedelta(days=day)
+            date_str = date.strftime('%Y-%m-%d')
+            updated_query = updated_query.replace(f"'{period}'", f"'{date_str}'")
+        
+        return updated_query
+
 
 @tool
 def evaluating_sql_output(result):

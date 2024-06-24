@@ -36,8 +36,8 @@ class DataAnalyst:
 
     def __creating_template_question_to_sql(self):
         self.question_to_sql_prompt = PromptTemplate(
-            template="{system_prompt}.\n {tables_info}\n\n The question you should answer with a SQL query is: {user_query}\n",
-            input_variables=["user_query"],
+            template="{system_prompt}.\n {tables_info}\n\n{memory}\nThe question you should answer with a SQL query is: {user_query}\n",
+            input_variables=["user_query", "memory"],
             partial_variables={
                 "tables_info":self.tables_info,
                 "system_prompt": SYSTEM_PROMPT_DA},
@@ -67,5 +67,6 @@ class DataAnalyst:
         return querying_db \
                 | translating_sql_to_audience
 
-    def analyzing_user_query(self, user_query):
-        return self.chain.invoke({'user_query': user_query})
+    def analyzing_user_query(self, user_query, memory=''):
+        return self.chain.invoke({'user_query': user_query,
+                                  'memory': memory})

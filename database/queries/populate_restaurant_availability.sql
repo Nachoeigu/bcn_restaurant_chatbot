@@ -1,4 +1,4 @@
-INSERT INTO restaurant_availability (table_id, period, time_slot, is_available) VALUES
+INSERT INTO restaurant_availability (table_id, date, time_slot, is_available) VALUES
 (1, '1_days_ahead', '10:00-12:00', FALSE),
 (1, '1_days_ahead', '12:00-14:00', FALSE),
 (1, '1_days_ahead', '14:00-16:00', FALSE),

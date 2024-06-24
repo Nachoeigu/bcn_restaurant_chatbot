@@ -226,7 +226,6 @@ INSERT INTO restaurant_catalog (name, description, category, price, is_vegetaria
 ('Chicken Stir Fry', 'Chicken stir-fried with vegetables and soy sauce', 'Main Course', 13.50, 0, 1, 0, 350),
 ('Falafel', 'Deep-fried chickpea balls with tahini sauce', 'Appetizer', 7.50, 1, 1, 0, 300),
 ('Ratatouille', 'French vegetable stew with herbs', 'Main Course', 11.00, 1, 1, 0, 250),
-('Grilled Lamb Chops', 'Lamb chops grilled with rosemary and garlic', 'Main Course', 22.00, 0, 1, 0, 600),
 ('Eggplant Parmesan', 'Baked eggplant with tomato sauce and cheese', 'Main Course', 12.00, 1, 0, 0, 450),
 ('Chicken Alfredo', 'Pasta with chicken in creamy Alfredo sauce', 'Main Course', 15.00, 0, 1, 0, 600),
 ('Greek Salad', 'Salad with tomatoes, cucumbers, olives, and feta', 'Salad', 9.00, 1, 1, 0, 200),

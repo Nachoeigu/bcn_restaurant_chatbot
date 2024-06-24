@@ -25,6 +25,7 @@ class QAbot:
         self.retriever = retriever
         self.tts = TextToSpeech()
         self.__creating_prompt_template()
+        self.__creating_chain()
 
     def __creating_prompt_template(self):
         self.prompt_template = ChatPromptTemplate.from_messages([
@@ -35,10 +36,12 @@ class QAbot:
     def __format_retrieved_docs(self, docs):
         return "\n\n".join(doc.page_content for doc in docs)
 
-    def query(self, user_query):
-        chain = {"context": self.retriever | self.__format_retrieved_docs, "question": RunnablePassthrough()} \
-                | self.prompt_template \
-                | self.model \
-                | StrOutputParser()
+    def __creating_chain(self):
+        self.chain = {"context": self.retriever | self.__format_retrieved_docs, "question": RunnablePassthrough()} \
+                        | self.prompt_template \
+                        | self.model \
+                        | StrOutputParser()
 
-        return chain.invoke(user_query)
+
+    def query(self, user_query, memory = ''):
+        return self.chain.invoke(user_query+'\n'+memory)

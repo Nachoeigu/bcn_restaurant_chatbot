@@ -9,7 +9,6 @@ class SpeechToText:
         self.FORMAT = pyaudio.paInt16
         self.CHANNELS = 1
         self.RATE = 44100        
-        self.MIC = pyaudio.PyAudio()
         self.DURATION_SECS = duration_secs
         self.__creating_chain()
 
@@ -17,7 +16,8 @@ class SpeechToText:
         """
         Start listening and process it
         """
-        stream = self.MIC.open(format=self.FORMAT,
+        MIC = pyaudio.PyAudio()
+        stream = MIC.open(format=self.FORMAT,
                     channels=self.CHANNELS,
                     rate=self.RATE,
                     input=True,
@@ -35,7 +35,7 @@ class SpeechToText:
         
         stream.stop_stream()
         stream.close()
-        self.MIC.terminate()
+        MIC.terminate()
         audio = b''.join(frames)
         
         return audio

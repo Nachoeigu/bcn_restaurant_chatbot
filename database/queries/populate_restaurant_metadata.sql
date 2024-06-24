@@ -3,7 +3,7 @@ INSERT INTO restaurant_metadata (table_name, column_name, description) VALUES
 ('restaurant_metadata', 'column_name', 'Name of the column in the table'),
 ('restaurant_metadata', 'description', 'Description of current column'),
 ('restaurant_availability', 'table_id', 'Identifier for the table'),
-('restaurant_availability', 'period', 'Time period for availability (e.g. 1_days_ahead, 2_days_ahead...)'),
+('restaurant_availability', 'date', 'Dates for availability (e.g. "2024-07-30", "2024-02-21"...)'),
 ('restaurant_availability', 'time_slot', "Specific time slot for the table. Possible values: '10:00-12:00', '12:00-14:00', '14:00-16:00', '16:00-18:00', '18:00-20:00' or '20:00-22:00'"),
 ('restaurant_availability', 'is_available', 'Availability status of the table'),
 ('restaurant_catalog', 'id', 'Unique identifier for each item'),
