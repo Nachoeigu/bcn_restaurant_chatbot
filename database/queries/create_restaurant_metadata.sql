@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS restaurant_metadata (
+CREATE TABLE restaurant_metadata (
     table_name TEXT,
     column_name TEXT,
     description TEXT,

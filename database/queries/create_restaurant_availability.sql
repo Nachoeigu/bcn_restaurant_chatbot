@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS restaurant_availability (
+CREATE TABLE restaurant_availability (
     table_id INT,
     date TEXT,
     time_slot VARCHAR(50),

@@ -8,6 +8,12 @@ WORKDIR=os.getenv("WORKDIR")
 os.chdir(WORKDIR)
 sys.path.append(WORKDIR)
 
+import logging
+import logging_config
+
+logger = logging.getLogger(__name__)
+
+
 class DatabaseDescriber:
     def __init__(self, db_path):
         self.db_path = db_path

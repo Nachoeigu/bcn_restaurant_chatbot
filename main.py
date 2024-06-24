@@ -17,6 +17,10 @@ from langchain_openai.chat_models import ChatOpenAI
 from langchain_google_vertexai import ChatVertexAI
 from langchain.memory import ConversationBufferMemory
 from utils import loading_retriever
+import logging
+import logging_config
+
+logger = logging.getLogger(__name__)
 
 
 if __name__ == '__main__':
@@ -33,7 +37,6 @@ if __name__ == '__main__':
     tts_bot = TextToSpeech()
     stt_bot = SpeechToText(duration_secs=10)
     memory = ConversationBufferMemory(memory_key='chat_history',return_messages=True)
-    print("Settings:\n")
     user_input_preference = int(input("Do you want to write or speech? \n 1) Write\n 2) Speech \nAnswer: "))
     user_output_preference = int(input("Do you want to receive text or audio? \n 1) Text\n 2) Audio \nAnswer: "))
 
@@ -51,7 +54,7 @@ if __name__ == '__main__':
                                                     memory = str(memory.load_memory_variables({})))
             
             if (da_result.solved == False)|(da_result.response == ''):
-                print("Answer not present in our SQL database...")
+                logging.info("Answer not present in our SQL database...")
                 result = qa_bot.query(user_query = user_query,
                                       memory = str(memory.load_memory_variables({})))
             else:
@@ -60,7 +63,7 @@ if __name__ == '__main__':
             result = qa_bot.query(user_query = user_query,
                                   memory = str(memory.load_memory_variables({})))
         if user_output_preference == 1:
-            print(result)
+            logging.info(result)
         else:
             tts_bot.generating_audio(result)
 

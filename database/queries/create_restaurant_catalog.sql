@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS restaurant_catalog
+CREATE TABLE restaurant_catalog
 (id INTEGER PRIMARY KEY AUTOINCREMENT,
 name TEXT NOT NULL,
 description TEXT,

@@ -1,6 +1,10 @@
 import pyaudio
 import speech_recognition as sr
 from langchain_core.runnables import RunnableLambda
+import logging
+import logging_config
+
+logger = logging.getLogger(__name__)
 
 class SpeechToText:
 
@@ -23,7 +27,7 @@ class SpeechToText:
                     input=True,
                     frames_per_buffer=self.CHUNK)
         
-        print("Catching audio...")
+        logger.info("Catching audio...")
         
         frames = []
         
@@ -31,7 +35,7 @@ class SpeechToText:
             data = stream.read(self.CHUNK)
             frames.append(data)
             
-        print("End of recording...")
+        logger.info("End of recording...")
         
         stream.stop_stream()
         stream.close()

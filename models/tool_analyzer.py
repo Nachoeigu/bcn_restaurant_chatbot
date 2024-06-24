@@ -12,6 +12,10 @@ from constants import SYSTEM_PROMPT_TA
 from langchain.output_parsers import PydanticOutputParser
 from validators.langchain_validators import ExpectedOutputBotTA
 from langchain.globals import set_debug
+import logging
+import logging_config
+
+logger = logging.getLogger(__name__)
 
 set_debug(True)
 
@@ -32,7 +36,7 @@ class ToolAnalyzer:
         )
 
     def analyzing_query(self, user_query, memory=''):
-        print("Analyzing if we need to go to Vectorstore or SQL Database...")
+        logger.info("Analyzing if we need to go to Vectorstore or SQL Database...")
         chain = self.prompt | self.model | self.parser
 
         return chain.invoke({'user_query':user_query,

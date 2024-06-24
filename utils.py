@@ -11,12 +11,15 @@ import sqlite3
 from langchain.tools import  tool
 from database.database_descriptor import DatabaseDescriber
 from datetime import datetime, timedelta
+import logging
+import logging_config
+
+logger = logging.getLogger(__name__)
 
 
 load_dotenv()
 
 def loading_retriever(app):
-    print("Going to vector database to find result...")
     app.loading_vdb(index_name = 'bcnrestaurant')
     retriever = app.vdb.as_retriever(search_type="similarity", 
                                     search_kwargs={"k": 2})
@@ -61,7 +64,7 @@ def run_query(query):
         c.execute(query)
         result = c.fetchall()
     except sqlite3.Error as e:
-        print(f"An error occurred: {e}")
+        logger.info(f"An error occurred: {e}")
     finally:
         connection.close()
         return result
