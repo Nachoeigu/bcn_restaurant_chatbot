@@ -50,6 +50,7 @@ if __name__ == '__main__':
         result_toolanalyzer = ta_bot.analyzing_query(user_query = user_query,
                                                      memory = str(memory.load_memory_variables({})))
         if result_toolanalyzer.go_database:
+            logger.info("Going into SQL Database...")
             da_result = da_bot.analyzing_user_query(user_query = user_query,
                                                     memory = str(memory.load_memory_variables({})))
             
@@ -60,6 +61,7 @@ if __name__ == '__main__':
             else:
                 result = da_result.response
         else:
+            logger.info("Going to Vector Database...")
             result = qa_bot.query(user_query = user_query,
                                   memory = str(memory.load_memory_variables({})))
         if user_output_preference == 1:

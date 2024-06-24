@@ -13,6 +13,7 @@ Applied AI approach in this project: Vector Databases Managment, Retrieval Augme
     - LANGCHAIN_PROJECT
     - OPENAI_API_KEY
     - WORKDIR
+    - LANGCHAIN_DEBUG_LOGGING
 
 2) Executes generate_local_database.py. This will create the restaurant database and database info for you.
 

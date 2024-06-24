@@ -13,17 +13,22 @@ from constants import SYSTEM_PROMPT_QA
 from langchain_core.output_parsers.string import StrOutputParser
 from langchain.globals import set_debug
 from models.tts_bot import TextToSpeech
+import logging
+import logging_config
+
+logger = logging.getLogger(__name__)
 
 load_dotenv()
-set_debug(True)
+if os.getenv("LANGCHAIN_DEBUG_LOGGING") == True:
+    set_debug(True)
 
 
 class QAbot:
 
     def __init__(self, model, retriever):
+        logger.info("Setting questioning answering bot...")
         self.model = model
         self.retriever = retriever
-        self.tts = TextToSpeech()
         self.__creating_prompt_template()
         self.__creating_chain()
 

@@ -17,12 +17,14 @@ import logging_config
 
 logger = logging.getLogger(__name__)
 
-set_debug(True)
+if os.getenv("LANGCHAIN_DEBUG_LOGGING") == True:
+    set_debug(True)
 
 
 class ToolAnalyzer:
 
     def __init__(self, model):
+        logger.info("Setting tool analyzer bot...")
         self.parser = PydanticOutputParser(pydantic_object=ExpectedOutputBotTA)
         self.__creating_prompt()
         self.model = model

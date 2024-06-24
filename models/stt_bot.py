@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 class SpeechToText:
 
     def __init__(self, duration_secs=10):
+        logger.info("Setting speech to text bot...")
         self.CHUNK = 1024
         self.FORMAT = pyaudio.paInt16
         self.CHANNELS = 1
@@ -27,7 +28,7 @@ class SpeechToText:
                     input=True,
                     frames_per_buffer=self.CHUNK)
         
-        logger.info("Catching audio...")
+        logger.info("Recording audio...")
         
         frames = []
         
@@ -46,8 +47,9 @@ class SpeechToText:
 
     def audio_to_text(self, audio_data) -> str:
         """
-        Converts audio into text
+        Converts input audio into text
         """
+        logger.info("Converting input audio into text...")
         recognizer = sr.Recognizer()
         audio_data = sr.AudioData(audio_data, sample_rate=44100, sample_width=2)
         text = recognizer.recognize_google(audio_data=audio_data, language='en')

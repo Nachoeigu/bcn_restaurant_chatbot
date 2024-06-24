@@ -16,12 +16,17 @@ from constants import SYSTEM_PROMPT_DA, SYSTEM_PROMPT_COMMUNICATOR
 from validators.langchain_validators import ExpectedSQLOutputBotDA,ExpectedResponseOutputBotDA
 from utils import evaluating_sql_output
 from langchain.globals import set_debug
+import logging
+import logging_config
 
-set_debug(True)
+logger = logging.getLogger(__name__)
+if os.getenv("LANGCHAIN_DEBUG_LOGGING") == True:
+    set_debug(True)
 
 class DataAnalyst:
 
     def __init__(self, model):
+        logger.info("Setting Data Analyst bot...")
         self.db = SQLDatabase.from_uri(f"sqlite:///{WORKDIR}/database/restaurant_data.db")
         
         with open(f"{WORKDIR}/database/database_info.txt",'r') as file:
@@ -68,5 +73,6 @@ class DataAnalyst:
                 | translating_sql_to_audience
 
     def analyzing_user_query(self, user_query, memory=''):
+        logger.info("Developing SQL Query for answering the question...")
         return self.chain.invoke({'user_query': user_query,
                                   'memory': memory})

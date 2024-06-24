@@ -14,7 +14,6 @@ from models.qa_bot import QAbot
 from models.da_bot import DataAnalyst
 from models.tool_analyzer import ToolAnalyzer
 from langchain_openai.chat_models import ChatOpenAI
-from main import analyzing_with_data_analyst, analyzing_with_vectorstore
 import uvicorn
 import json
 
@@ -34,17 +33,7 @@ def index():
 
 @app.post("/query")
 def answering_query(request: str) -> str:
-    result_toolanalyzer = ta_bot.analyzing_query(user_query = request)
-    if result_toolanalyzer.go_database:
-        da_result = analyzing_with_data_analyst(user_query = request)
-        if da_result.solved == False:
-            result = analyzing_with_vectorstore(request)
-        else:
-            result = da_result.response
-    else:
-        result = analyzing_with_vectorstore(request)
-
-    return result
+    pass
 
 @app.post("/model")
 def provide_used_model():

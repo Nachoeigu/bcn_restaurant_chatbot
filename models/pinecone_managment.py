@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 class PineconeManagment:
 
     def __init__(self):
-        pass
+        logger.info("Setting pinecone connection...")
 
     def __extract_metadata(self, record: dict, metadata: dict) -> dict:
 
