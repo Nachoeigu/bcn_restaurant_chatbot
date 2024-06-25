@@ -22,13 +22,14 @@ from utils import loading_retriever
 from validators.extra_validators import QueryUserInput
 from operator import itemgetter
 from langchain.globals import set_debug
+from models.chain_pipeline import ChainPipeline
 
 import logging
 import logging_config
 
 logger = logging.getLogger(__name__)
 
-if os.getenv("LANGCHAIN_DEBUG_LOGGING") == True:
+if os.getenv("LANGCHAIN_DEBUG_LOGGING") == 'True':
     set_debug(True)
 
 
@@ -37,50 +38,25 @@ if __name__ == '__main__':
     #model = ChatGoogleGenerativeAI(model = 'gemini-1.5-pro', temperature = 0)
     #model = ChatOpenAI(model = 'gpt-4o', temperature = 0)
     model = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0)
-    app = PineconeManagment()
-    ta_bot = ToolAnalyzer(model = model)
-    da_bot = DataAnalyst(model = model)
-    retriever = loading_retriever(app = app)
-    qa_bot = QAbot(model = model,
-                retriever= retriever)
+    memory = ConversationBufferMemory(memory_key='chat_history',return_messages=True)
     tts_bot = TextToSpeech()
     stt_bot = SpeechToText(duration_secs=10)
-    memory = ConversationBufferMemory(memory_key='chat_history',return_messages=True)
 
-    def get_user_inputs():
-        return input("Write your question: \n - ")
-
-    chain = RunnableLambda(ta_bot.analyzing_query) \
-            | RunnableBranch(
-            (
-                #Chain if the tool analyzer consider that the query could be solved with SQL Database
-                lambda tool_analyzer_result: tool_analyzer_result.go_database,
-                #Intermediate output where we obtain the response based on the developed SQL Query
-                ({'intermediate_output': lambda tool_analyzer_result: da_bot.analyzing_user_query(user_query = tool_analyzer_result.user_query)}) \
-                    #Analyzing if it is needed to go to Vectorstore or if the answer from the Data Analyst is good for it.
-                    | RunnableBranch(
-                        (
-                            #Chain if the Data Analyst bot couldn´t answer succesfully the initial query
-                            lambda intermediate_output : (intermediate_output['intermediate_output'].solved == False)|(intermediate_output['intermediate_output'].response == ''),
-                            #In this chain, we go to the Vectorstore and retrieve the result from it
-                            {'output': lambda tool_analyzer_result: qa_bot.query(user_query = tool_analyzer_result.user_query)}
-                        ),
-                        #Chain if the Data Analyst bot could answer succesfully the initial query
-                        {'output': lambda intermediate_output: intermediate_output['intermediate_output'].response}
-                        
-                    )
-            ),
-            (
-                #Chain if the tool analyzer consider that the query could be solved with Vector Database
-                lambda tool_analyzer_result: tool_analyzer_result.go_database == False,
-                #Chain, where we retrieve the result from the Vector database
-                ({'output': lambda tool_analyzer_result: qa_bot.query(user_query = tool_analyzer_result.user_query)})
-            ),
-            RunnableLambda(lambda tool_analyzer_result: tool_analyzer_result)
-        )
+    entire_chain = ChainPipeline(model = model, conversation_in_text=True)
     
-    result = chain.invoke({'user_query': get_user_inputs(),
-                            'mode':'text'
-                        })    
-    print(result['output'])
+    chain = entire_chain.chain
+    user_query = input("Write your question: \n - ") if entire_chain.conversation_in_text else stt_bot.listen_and_transcribing_audio()
+    result = chain.invoke({
+        'user_query': user_query,
+        'memory':str(memory.load_memory_variables({}))
+    })
+
+    output = {
+        'output': result['output'] if entire_chain.conversation_in_text else tts_bot.generating_audio(result['output'])
+    }
+
+    memory.save_context(
+        {'user':user_query},
+        {'bot':result['output']}
+    )   
 

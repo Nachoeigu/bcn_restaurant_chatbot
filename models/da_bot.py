@@ -20,7 +20,7 @@ import logging
 import logging_config
 
 logger = logging.getLogger(__name__)
-if os.getenv("LANGCHAIN_DEBUG_LOGGING") == True:
+if os.getenv("LANGCHAIN_DEBUG_LOGGING") == 'True':
     set_debug(True)
 
 class DataAnalyst:
