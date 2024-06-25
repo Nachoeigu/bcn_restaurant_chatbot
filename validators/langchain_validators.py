@@ -12,6 +12,7 @@ import re
 
 class ExpectedOutputBotTA(BaseModel):
     go_database: bool = Field(..., description = "True if it is question is about food catalog or table availability. Otherwise, False.")
+    user_query: str = Field(..., description = "The original user query")
 
 class ExpectedResponseOutputBotDA(BaseModel):
     """Structuring the response of the LLM"""
