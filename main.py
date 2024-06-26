@@ -36,27 +36,31 @@ if os.getenv("LANGCHAIN_DEBUG_LOGGING") == 'True':
 if __name__ == '__main__':
     #model = ChatVertexAI(model="gemini-pro", temperature=0)
     #model = ChatGoogleGenerativeAI(model = 'gemini-1.5-pro', temperature = 0)
-    #model = ChatOpenAI(model = 'gpt-4o', temperature = 0)
-    model = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0)
+    model = ChatOpenAI(model = 'gpt-4o', temperature = 0)
+    #model = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0)
     memory = ConversationBufferMemory(memory_key='chat_history',return_messages=True)
     tts_bot = TextToSpeech()
     stt_bot = SpeechToText(duration_secs=10)
 
     entire_chain = ChainPipeline(model = model, conversation_in_text=True)
     
-    chain = entire_chain.chain
-    user_query = input("Write your question: \n - ") if entire_chain.conversation_in_text else stt_bot.listen_and_transcribing_audio()
-    result = chain.invoke({
-        'user_query': user_query,
-        'memory':str(memory.load_memory_variables({}))
-    })
+    while True:
+        entire_chain.set_memory(memory)
+        
+        user_query = input("Write your question: \n - ") if entire_chain.conversation_in_text else stt_bot.listen_and_transcribing_audio()
+        
+        result = entire_chain.chain.invoke({
+            'user_query': user_query,
+            'memory':str(memory.load_memory_variables({}))
+        })
 
-    output = {
-        'output': result['output'] if entire_chain.conversation_in_text else tts_bot.generating_audio(result['output'])
-    }
+        output = {
+            'output': result['output'] if entire_chain.conversation_in_text else tts_bot.generating_audio(result['output'])
+        }
 
-    memory.save_context(
-        {'user':user_query},
-        {'bot':result['output']}
-    )   
+        memory.save_context(
+            {'user':user_query},
+            {'bot':result['output']}
+        )   
+        entire_chain.set_memory(memory)
 

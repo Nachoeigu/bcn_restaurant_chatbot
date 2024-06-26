@@ -44,32 +44,47 @@ class ChainPipeline:
         self.chain = self.__implementing_chain()
 
     def __implementing_chain(self):
-
-        return RunnableLambda(self.ta_bot.analyzing_query) \
-                | RunnableBranch(
+        tool_analyzer_chain = RunnableLambda(self.ta_bot.analyzing_query)
+        go_to_database_condition = lambda tool_analyzer_result: tool_analyzer_result.go_database
+        go_to_vdb_condition = lambda tool_analyzer_result: tool_analyzer_result.go_database == False
+        develop_sql_query_chain = ({'intermediate_output': lambda tool_analyzer_result: self.da_bot.analyzing_user_query(user_query = tool_analyzer_result.user_query)})
+        answer_with_vdb_chain = ({'output': lambda input_data: self.qa_bot.query(user_query = input_data.user_query)})
+        da_solved_question_condition = lambda intermediate_output : (intermediate_output['intermediate_output'].solved == False)|(intermediate_output['intermediate_output'].response == '')
+        evaluating_sql_query_chain = RunnableBranch(
+            (
+                #Chain if the Data Analyst bot couldn´t answer succesfully the initial query
+                da_solved_question_condition,
+                #In this chain, we go to the Vectorstore and retrieve the result from it
+                answer_with_vdb_chain
+            ),
+            #Chain if the Data Analyst bot could answer succesfully the initial query
+            {'output': lambda intermediate_output: intermediate_output['intermediate_output'].response}
+            
+        )
+        main_execution_chain = RunnableBranch(
                 (
                     #Chain if the tool analyzer consider that the query could be solved with SQL Database
-                    lambda tool_analyzer_result: tool_analyzer_result.go_database,
+                    go_to_database_condition,
                     #Intermediate output where we obtain the response based on the developed SQL Query
-                    ({'intermediate_output': lambda tool_analyzer_result: self.da_bot.analyzing_user_query(user_query = tool_analyzer_result.user_query)}) \
+                    develop_sql_query_chain \
                         #Analyzing if it is needed to go to Vectorstore or if the answer from the Data Analyst is good for it.
-                        | RunnableBranch(
-                            (
-                                #Chain if the Data Analyst bot couldn´t answer succesfully the initial query
-                                lambda intermediate_output : (intermediate_output['intermediate_output'].solved == False)|(intermediate_output['intermediate_output'].response == ''),
-                                #In this chain, we go to the Vectorstore and retrieve the result from it
-                                {'output': lambda tool_analyzer_result: self.qa_bot.query(user_query = tool_analyzer_result.user_query)}
-                            ),
-                            #Chain if the Data Analyst bot could answer succesfully the initial query
-                            {'output': lambda intermediate_output: intermediate_output['intermediate_output'].response}
-                            
-                        )
+                        | evaluating_sql_query_chain
                 ),
                 (
                     #Chain if the tool analyzer consider that the query could be solved with Vector Database
-                    lambda tool_analyzer_result: tool_analyzer_result.go_database == False,
+                    go_to_vdb_condition,
                     #Chain, where we retrieve the result from the Vector database
-                    ({'output': lambda tool_analyzer_result: self.qa_bot.query(user_query = tool_analyzer_result.user_query)})
+                    answer_with_vdb_chain
                 ),
                 RunnableLambda(lambda tool_analyzer_result: tool_analyzer_result)
             )
+
+        return tool_analyzer_chain \
+                | main_execution_chain
+    
+
+    def set_memory(self, memory: ConversationBufferMemory):
+        self.memory = str(memory.load_memory_variables({}))
+        self.ta_bot.memory = str(memory.load_memory_variables({}))
+        self.da_bot.memory = str(memory.load_memory_variables({}))
+        self.qa_bot.memory = str(memory.load_memory_variables({}))
