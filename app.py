@@ -28,7 +28,7 @@ def index():
 
 @app.post("/query")
 def answering_query(request: str) -> str:
-    return chain.invoke({'user_query':request})
+    return chain.run(user_query=request)
 
 @app.post("/model")
 def provide_used_model():

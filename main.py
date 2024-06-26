@@ -41,10 +41,8 @@ if __name__ == '__main__':
 
         user_query = input("Write your question: \n - ") if entire_chain.conversation_in_text else stt_bot.listen_and_transcribing_audio()
         
-        result = entire_chain.chain.invoke({
-            'user_query': user_query,
-            'memory':str(memory.load_memory_variables({}))
-        })
+        result = entire_chain.run(user_query = user_query)
+        
 
         output = {
             'output': result['output'] if entire_chain.conversation_in_text else tts_bot.generating_audio(result['output'])
