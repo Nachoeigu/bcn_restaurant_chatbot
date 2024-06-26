@@ -42,11 +42,12 @@ if __name__ == '__main__':
     tts_bot = TextToSpeech()
     stt_bot = SpeechToText(duration_secs=10)
 
-    entire_chain = ChainPipeline(model = model, conversation_in_text=True)
+    entire_chain = ChainPipeline(model = model, 
+                                 conversation_in_text=True)
     
     while True:
         entire_chain.set_memory(memory)
-        
+
         user_query = input("Write your question: \n - ") if entire_chain.conversation_in_text else stt_bot.listen_and_transcribing_audio()
         
         result = entire_chain.chain.invoke({
