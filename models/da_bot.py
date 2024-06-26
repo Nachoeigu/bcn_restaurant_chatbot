@@ -18,9 +18,11 @@ from utils import evaluating_sql_output
 from langchain.globals import set_debug
 import logging
 import logging_config
+from langchain.memory import ConversationBufferMemory
+
 
 logger = logging.getLogger(__name__)
-if os.getenv("LANGCHAIN_DEBUG_LOGGING") == True:
+if os.getenv("LANGCHAIN_DEBUG_LOGGING") == 'True':
     set_debug(True)
 
 class DataAnalyst:
@@ -38,6 +40,9 @@ class DataAnalyst:
         self.__creating_template_question_to_sql()
         self.__creating_template_sql_to_response()
         self.chain = self.__creating_chain()
+
+    def set_memory(self, memory: ConversationBufferMemory):
+        self.memory = memory
 
     def __creating_template_question_to_sql(self):
         self.question_to_sql_prompt = PromptTemplate(
@@ -72,7 +77,11 @@ class DataAnalyst:
         return querying_db \
                 | translating_sql_to_audience
 
-    def analyzing_user_query(self, user_query, memory=''):
+    def analyzing_user_query(self, user_query):
         logger.info("Developing SQL Query for answering the question...")
         return self.chain.invoke({'user_query': user_query,
-                                  'memory': memory})
+                                  'memory': self.memory})
+
+
+
+

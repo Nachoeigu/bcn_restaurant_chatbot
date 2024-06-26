@@ -9,11 +9,8 @@ sys.path.append(WORKDIR)
 
 from fastapi import FastAPI
 #from mangum import Magnum
-from models.pinecone_managment import PineconeManagment
-from models.qa_bot import QAbot
-from models.da_bot import DataAnalyst
-from models.tool_analyzer import ToolAnalyzer
 from langchain_openai.chat_models import ChatOpenAI
+from models.chain_pipeline import ChainPipeline
 import uvicorn
 import json
 
@@ -22,10 +19,8 @@ app = FastAPI()
 #handler = Magnum(app)
 
 model = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0)
-pinecone_app = PineconeManagment()
-ta_bot = ToolAnalyzer(model = model)
-da_bot = DataAnalyst(model = model)
-
+chain = ChainPipeline(model = model,
+                    conversation_in_text= True).chain
 
 @app.get("/")
 def index():
@@ -33,7 +28,7 @@ def index():
 
 @app.post("/query")
 def answering_query(request: str) -> str:
-    pass
+    return chain.run(user_query=request)
 
 @app.post("/model")
 def provide_used_model():

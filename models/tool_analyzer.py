@@ -14,10 +14,11 @@ from validators.langchain_validators import ExpectedOutputBotTA
 from langchain.globals import set_debug
 import logging
 import logging_config
+from langchain.memory import ConversationBufferMemory
 
 logger = logging.getLogger(__name__)
 
-if os.getenv("LANGCHAIN_DEBUG_LOGGING") == True:
+if os.getenv("LANGCHAIN_DEBUG_LOGGING") == 'True':
     set_debug(True)
 
 
@@ -28,6 +29,9 @@ class ToolAnalyzer:
         self.parser = PydanticOutputParser(pydantic_object=ExpectedOutputBotTA)
         self.__creating_prompt()
         self.model = model
+    
+    def set_memory(self, memory: ConversationBufferMemory):
+        self.memory = memory
 
     def __creating_prompt(self):
         self.prompt = PromptTemplate(
@@ -37,9 +41,9 @@ class ToolAnalyzer:
                                "system_prompt": SYSTEM_PROMPT_TA},
         )
 
-    def analyzing_query(self, user_query, memory=''):
+    def analyzing_query(self, user_query):
         logger.info("Analyzing if we need to go to Vectorstore or SQL Database...")
         chain = self.prompt | self.model | self.parser
 
         return chain.invoke({'user_query':user_query,
-                             'memory':memory})
+                             'memory':self.memory})

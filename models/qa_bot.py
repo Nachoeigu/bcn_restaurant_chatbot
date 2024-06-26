@@ -15,11 +15,12 @@ from langchain.globals import set_debug
 from models.tts_bot import TextToSpeech
 import logging
 import logging_config
+from langchain.memory import ConversationBufferMemory
 
 logger = logging.getLogger(__name__)
 
 load_dotenv()
-if os.getenv("LANGCHAIN_DEBUG_LOGGING") == True:
+if os.getenv("LANGCHAIN_DEBUG_LOGGING") == 'True':
     set_debug(True)
 
 
@@ -31,6 +32,9 @@ class QAbot:
         self.retriever = retriever
         self.__creating_prompt_template()
         self.__creating_chain()
+
+    def set_memory(self, memory: ConversationBufferMemory):
+        self.memory = memory
 
     def __creating_prompt_template(self):
         self.prompt_template = ChatPromptTemplate.from_messages([
@@ -48,5 +52,5 @@ class QAbot:
                         | StrOutputParser()
 
 
-    def query(self, user_query, memory = ''):
-        return self.chain.invoke(user_query+'\n'+memory)
+    def query(self, user_query):
+        return self.chain.invoke(user_query+'\n'+self.memory)
