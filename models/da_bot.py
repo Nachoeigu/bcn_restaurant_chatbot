@@ -81,3 +81,7 @@ class DataAnalyst:
         logger.info("Developing SQL Query for answering the question...")
         return self.chain.invoke({'user_query': user_query,
                                   'memory': self.memory})
+
+
+
+

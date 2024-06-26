@@ -11,16 +11,10 @@ from models.pinecone_managment import PineconeManagment
 from models.qa_bot import QAbot
 from models.da_bot import DataAnalyst
 from models.tool_analyzer import ToolAnalyzer
-from models.tts_bot import TextToSpeech
-from models.stt_bot import SpeechToText
-from langchain_openai.chat_models import ChatOpenAI
-from langchain_google_vertexai import ChatVertexAI
 from langchain.memory import ConversationBufferMemory
 from langchain_core.runnables.branch import RunnableBranch
-from langchain_core.runnables import RunnablePassthrough, RunnableLambda
+from langchain_core.runnables import RunnableLambda
 from utils import loading_retriever
-from validators.extra_validators import QueryUserInput
-from operator import itemgetter
 from langchain.globals import set_debug
 
 import logging
