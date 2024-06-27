@@ -11,7 +11,7 @@ from models.pinecone_managment import PineconeManagment
 from models.qa_bot import QAbot
 from models.da_bot import DataAnalyst
 from models.tool_analyzer import ToolAnalyzer
-from langchain.memory import ConversationBufferMemory
+from langchain.memory import ConversationBufferWindowMemory
 from langchain_core.runnables import RunnableLambda
 from utils import loading_retriever
 from langchain.globals import set_debug
@@ -59,11 +59,11 @@ class ChainPipeline:
 
         return chain
     
-    def set_memory(self, memory: ConversationBufferMemory):
+    def set_memory(self, memory: ConversationBufferWindowMemory):
         self.memory = str(memory.load_memory_variables({}))
-        self.ta_bot.memory = str(memory.load_memory_variables({}))
-        self.da_bot.memory = str(memory.load_memory_variables({}))
-        self.qa_bot.memory = str(memory.load_memory_variables({}))
+        self.ta_bot.memory = "Consider the following chat history for your answer: \n"+str(memory.load_memory_variables({}))
+        self.da_bot.memory = "Consider the following chat history for your answer: \n"+str(memory.load_memory_variables({}))
+        self.qa_bot.memory = "Consider the following chat history for your answer: \n"+str(memory.load_memory_variables({}))
 
     def run(self, user_query=''):
         self.user_query = user_query

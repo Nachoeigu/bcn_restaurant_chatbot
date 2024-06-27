@@ -11,7 +11,7 @@ from models.tts_bot import TextToSpeech
 from models.stt_bot import SpeechToText
 from langchain_openai.chat_models import ChatOpenAI
 from langchain_google_vertexai import ChatVertexAI
-from langchain.memory import ConversationBufferMemory
+from langchain.memory import ConversationBufferWindowMemory
 from langchain.globals import set_debug
 from models.chain_pipeline import ChainPipeline
 
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     #model = ChatGoogleGenerativeAI(model = 'gemini-1.5-pro', temperature = 0)
     model = ChatOpenAI(model = 'gpt-4o', temperature = 0)
     #model = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0)
-    memory = ConversationBufferMemory(memory_key='chat_history',return_messages=True)
+    memory = ConversationBufferWindowMemory(memory_key='chat_history',return_messages=True,k=3)
     tts_bot = TextToSpeech()
     stt_bot = SpeechToText(duration_secs=10)
 
