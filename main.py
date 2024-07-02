@@ -47,6 +47,10 @@ if __name__ == '__main__':
         output = {
             'output': result['output'] if entire_chain.conversation_in_text else tts_bot.generating_audio(result['output'])
         }
+        try:
+            print("AI Response:\n"+output['output'])
+        except:
+            pass
 
         memory.save_context(
             {'user':user_query},

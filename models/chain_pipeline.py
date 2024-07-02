@@ -61,9 +61,9 @@ class ChainPipeline:
     
     def set_memory(self, memory: ConversationBufferWindowMemory):
         self.memory = str(memory.load_memory_variables({}))
-        self.ta_bot.memory = "Consider the following chat history for your answer: \n"+str(memory.load_memory_variables({}))
-        self.da_bot.memory = "Consider the following chat history for your answer: \n"+str(memory.load_memory_variables({}))
-        self.qa_bot.memory = "Consider the following chat history for your answer: \n"+str(memory.load_memory_variables({}))
+        self.ta_bot.memory = 'Consider the following chat history for your answer:\n' + str(memory.load_memory_variables({})['chat_history']) if memory.load_memory_variables({})['chat_history'] != [] else ''
+        self.da_bot.memory = 'Consider the following chat history for your answer:\n' + str(memory.load_memory_variables({})['chat_history']) if memory.load_memory_variables({})['chat_history'] != [] else ''
+        self.qa_bot.memory = 'Consider the following chat history for your answer:\n' + str(memory.load_memory_variables({})['chat_history']) if memory.load_memory_variables({})['chat_history'] != [] else ''
 
     def run(self, user_query=''):
         self.user_query = user_query

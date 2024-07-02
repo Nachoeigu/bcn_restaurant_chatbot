@@ -78,9 +78,10 @@ class PineconeManagment:
         logger.info("More info added in the vector database...")
 
     def finding_similar_docs(self, user_query):
-        docs = self.vdb.similarity_search(
+        docs = self.vdb.similarity_search_with_relevance_scores(
                     query = user_query,
-                    k = 3
+                    k = 3,
+                    score_threshold=0.9
                 )
         
         return docs

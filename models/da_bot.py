@@ -60,7 +60,7 @@ class DataAnalyst:
             partial_variables={
                 "system_prompt": SYSTEM_PROMPT_COMMUNICATOR},
         )
-        
+
     def __creating_chain(self):
         querying_db =  self.question_to_sql_prompt \
                         | self.model_structured_for_sql_development \
