@@ -9,6 +9,8 @@ RUN pip install -r requirements.txt --upgrade
 # For local testing.
 EXPOSE 8000
 
+WORKDIR /app
+
 ENV PINECONE_API_KEY=''
 ENV LANGCHAIN_API_KEY=''
 ENV LANGCHAIN_TRACING_V2=''
