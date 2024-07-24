@@ -22,7 +22,7 @@ from models.stt_bot import SpeechToText
 app = FastAPI()
 #model = ChatVertexAI(model="gemini-pro", temperature=0)
 #model = ChatGoogleGenerativeAI(model = 'gemini-1.5-pro', temperature = 0)
-model = ChatOpenAI(model = 'gpt-4o', temperature = 0)
+model = ChatOpenAI(model = 'gpt-4o-mini', temperature = 0)
 #model = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0)
 memory = ConversationBufferWindowMemory(memory_key='chat_history',return_messages=True,k=3)
 tts_bot = TextToSpeech()
